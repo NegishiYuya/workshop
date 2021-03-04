@@ -1,0 +1,103 @@
+## 目次
+
+-   前回までの復習
+-   Amazon Relational Database Services （RDS）
+
+## 前回までの復習
+
+---
+
+### 問題 1
+
+現在動いている EC2 インスタンスと同様の EC2 インスタンスを作成したい、どのように作成すればよいでしょうか。
+
+---
+
+### 問題 2
+
+AmazonEC2 において CloudWatch で CPU 使用率などを観測したところ、ほとんどの時間帯において CPU 使用率が低い、つまり用途に対して、過剰なスペックで構築されていることが分かった。
+見直すべきこととして想定される項目を 2 点あげてください。
+
+---
+
+### 問題 3
+
+株式会社テレビ東京では、映像のデータを S3 に保存している。
+このことで映像を保存するための物理メディアの購入コストを削減した。  
+さらに S3 の「ある機能」を使って、低頻度用ストレージの`S3 Glaicer`にアーカイブとして保存している。
+
+---
+
+### 問題 4
+
+プライベートサブネットからインターネット接続を行いたい場合、X にデプロイされた Y を通して接続をする必要がある。 X と Y は何でしょうか。
+
+---
+
+### 問題 5
+
+AWS の持つ伸縮性について「基幹システム」を例に説明してください。
+
+---
+
+## Amazon Relational Database Services （RDS）
+
+[AWS Cloud Practitioner Essentials (Second Edition) (Japanese): M3 – AWS の統合サービス | AWS トレーニングと認定](https://www.aws.training/Details/eLearning?id=34402) 動画内の項目 `Amazon Relational Database Services （RDS）`より
+
+
+### 主な特徴と押さえておきたい機能
+
+* 名称: Amazon Relational Database Service (Amazon RDS)
+* AWSのリレーショナル型のデータベース
+* 以下のRDBMSを使用可能
+    * Amazon Aurora
+        * AuroraはRDSのうちの一つ
+    * PostgreSQL
+    * MySQL
+    * MariaDB
+    * ORACLE
+        * 購入済みのライセンスの使用も可能
+    * SQLServer
+* コスト面のメリット
+    * オンデマンド ⇒ 従量課金
+    * リザーブドインスタンス ⇒ 長期利用の前払いで大幅割引
+* オンプレミスと比較し、運用コストが下げられる
+    * 空調やデータセンターの居室に関する管理
+    * パッチ当て
+    * OSレベルのチューニング
+        * オンプレミスでの構築パターンやEC2上にDBをインストールで運用のパターンで実現できるチューニングなどがAWSだと一部出来ないということも意識する！
+    * バックアップ
+        * 自動バックアップ
+            * もちろん手動バックアップも容易
+            * バックアップからの構築も容易
+* スペックの変更ストレージ容量の増が簡単にできる
+* 高い可用性
+    * マルチAZ構成
+        * 複数のAZに本番(マスター)・待機系(スレーブ)のインスタンスが構築される(冗長構成)
+            * 障害発生時にマスター・スレーブの切り替えでシステム停止を最低限に押さえる
+    * SLA 99.95%
+* リードレプリカを使った負荷分散
+    * 読み取り専用のDBを作り、バランシングする。そのことで負荷の一極集中を防ぐ。
+    * レプリカからマスターへの昇格もできる。障害発生時に有効。
+* AWSのほかの機能との連携
+    * CloudWatchを使った監視
+
+
+### 資料
+
+-   [Amazon RDS（マネージドリレーショナルデータベース）| AWS](https://aws.amazon.com/jp/rds/)
+-   [AWSのデータベースAmazon RDSとは？｜コラム｜クラウドソリューション｜サービス｜法人のお客さま｜NTT東日本](https://business.ntt-east.co.jp/content/cloudsolution/column-23.html)
+-   [AWSでDBを使うなら「Amazon RDS」一択？｜ソニー](https://www.bit-drive.ne.jp/managed-cloud/column/column_15.html)
+
+## 次回以降の内容
+
+-   次回：`Amazon Aurora`
+-   それ以降：[AWS Cloud Practitioner Essentials (Second Edition) (Japanese): M3 – AWS の統合サービス | AWS トレーニングと認定](https://www.aws.training/Details/eLearning?id=34402)の内容
+    -   Amazon Route 53
+    -   Amazon Relational Database Services （RDS）
+    -   AWS Lambda
+    -   AWS Elastic Beanstalk
+    -   Amazon Simple Notification Service （SNS）
+    -   Amazon CloudWatch
+    -   Amazon CloudFront
+    -   AWS CloudFormation
