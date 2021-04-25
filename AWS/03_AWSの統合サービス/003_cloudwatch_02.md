@@ -12,17 +12,33 @@
 AWS のリソースのモニタリングを行い、  
 閾値を超えた場合に他の機能と連携し、特定の宛先にメールを送りたい、どの CloudWatch 関連の機能を使うべきか。
 
+#### 解答
+
+Amazon CloudWatch Alarm
+
 ---
 
 ### 問題 2
 
 指定されたスケジュールで AWS リソースの操作を行いたい、どの CloudWatch 関連の機能を使うべきか。
 
+#### 解答
+
+Amazon CloudWatch Events
+
 ---
 
 ### 問題 3
 
 CloudWatchLogs を使ったログの管理における運用上のメリットを答えてください。
+
+#### 解答
+
+以下は一例。
+
+-   ログの一元管理
+-   インスタンスへの障害が発生した際に、インスタンスを介せずにログの取得ができる
+-   他サービスと連携し、ログの可視化ができる
 
 ---
 
@@ -40,17 +56,17 @@ WordPress(EC2+RDS)環境に関するモニタリング
 
 -   アラームを使って、閾値を超えた時の動作の確認
     -   EC2 の CPU 利用率が 10%以上を超えた場合に、特定のメールアドレスにメールを送る
-       -  アラーム状態の通知先は`Default_CloudWatch_Alarms_Topic`を選択すること
-       -  参考：[メールを送信する CPU 使用率アラームの作成 - Amazon CloudWatch](https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEC2.html) 
-       -  参考：[CloudWatchによる監視設定～SNS連携による通知設定～ | AWSやシステム・アプリ開発の最新情報｜クロスパワーブログ](https://xp-cloud.jp/blog/2017/11/16/1990/)
+    -   アラーム状態の通知先は`Default_CloudWatch_Alarms_Topic`を選択すること
+    -   参考：[メールを送信する CPU 使用率アラームの作成 - Amazon CloudWatch](https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/US_AlarmAtThresholdEC2.html)
+    -   参考：[CloudWatch による監視設定～ SNS 連携による通知設定～ | AWS やシステム・アプリ開発の最新情報｜クロスパワーブログ](https://xp-cloud.jp/blog/2017/11/16/1990/)
 -   ダッシュボードの作成
     -   RDS の接続数を数値とグラフで可視化する
-       - 参考：[CloudWatch ダッシュボードの作成 - Amazon CloudWatch](https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/create_dashboard.html)
-       - 参考：[CloudWatch ダッシュボードにグラフを追加または削除する - Amazon CloudWatch](https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/add_remove_graph_dashboard.html)   
+    -   参考：[CloudWatch ダッシュボードの作成 - Amazon CloudWatch](https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/create_dashboard.html)
+    -   参考：[CloudWatch ダッシュボードにグラフを追加または削除する - Amazon CloudWatch](https://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/add_remove_graph_dashboard.html)
 -   CloudWatchLogs を使ったログ管理
-    -   CloudWatchLogsInsightsを使って、WP を動かすための apache のログから 404 の件数を抽出する
-       -   ※EC2からCloudWatchLogsへの連携部分は設定済です。
-       -   参考：[CloudWatch Logs Insights でApacheのアクセスログを確認する | DevelopersIO](https://dev.classmethod.jp/articles/cwinsights-apache/)
+    -   CloudWatchLogsInsights を使って、WP を動かすための apache のログから 404 の件数を抽出する
+    -   ※EC2 から CloudWatchLogs への連携部分は設定済です。
+    -   参考：[CloudWatch Logs Insights で Apache のアクセスログを確認する | DevelopersIO](https://dev.classmethod.jp/articles/cwinsights-apache/)
 
 ### 資料
 
