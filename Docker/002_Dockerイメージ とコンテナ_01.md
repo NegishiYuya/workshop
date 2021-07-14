@@ -194,5 +194,7 @@ nginx コンテナを使ってコンテナのライフサイクルを回す。
 ## 資料
 
 -   書籍：[楽天ブックス: 仕組みと使い方がわかる Docker＆Kubernetes のきほんのきほん - 小笠原種高 - 9784839972745 : 本](https://books.rakuten.co.jp/rb/16580202/)
+-   電子書籍：[#マンガでわかる Docker ① 〜概念・基本コマンド編〜 【ダウンロード版】 #技術書典 - 湊川あいの、わかば家。 #技術書典 #わかばちゃんと学ぶ シリーズ - BOOTH](https://llminatoll.booth.pm/items/825879)
+-   電子書籍：[#マンガでわかる Docker ② 〜開発環境を作ろう編〜 #技術書典 【ダウンロード版】 - 湊川あいの、わかば家。 #技術書典 #わかばちゃんと学ぶ シリーズ - BOOTH](https://llminatoll.booth.pm/items/1036317)
 -   [Docker 入門（第一回）～ Docker とは何か、何が良いのか～ | さくらのナレッジ](https://knowledge.sakura.ad.jp/13265/)
 -   [Docker イメージの理解とコンテナのライフサイクル](https://www.slideshare.net/zembutsu/docker-images-containers-and-lifecycle)
