@@ -1,0 +1,47 @@
+# 基本の書き方
+#     - コメントは#で書く
+#     - `:`のあとは半角スペース開ける
+#     - 半角スペースでインデントをつける。
+#         - 行によって不揃い(とある行は半角2文字でインデント、とある行は半角4文字でインデントはNG。)
+#     - 配列は"-"で表現する
+
+# docker-composeのバージョンを指定する
+version: "3.1"
+
+# 定義するコンテナ群
+services:
+    # コンテナ1 wordpress001
+    wordpress001:
+        # 以下はdocker runで指定していたオプションたち
+        # 基にするイメージ
+        image: wordpress
+        # ポートの設定
+        ports:
+            - 8086:80
+        # 環境変数
+        environment:
+            WORDPRESS_DB_HOST: mysql001 # コンテナ2を指定
+            WORDPRESS_DB_USER: wordpressdbuser
+            WORDPRESS_DB_PASSWORD: wordpressdbpass
+            WORDPRESS_DB_NAME: wordpressdb
+        # ネットワーク
+        networks:
+            - wordpress-mysql
+    # コンテナ2 mysql001
+    mysql001:
+        image: mysql
+        environment:
+            MYSQL_DATABASE: wordpressdb
+            MYSQL_USER: wordpressdbuser
+            MYSQL_PASSWORD: wordpressdbpass
+            MYSQL_ROOT_PASSWORD: mysqlrootpass
+        networks:
+            - wordpress-mysql
+
+# ネットワークの定義
+# docker composeでコンテナを立ち上げる場合、デフォルトでネットワークが作成される
+# ハンズオンの手順と合わせるために明示的に作ったが、
+# ハンズオンの「要件」を満たすためなら不要
+networks:
+    wordpress-mysql:
+        driver: bridge
