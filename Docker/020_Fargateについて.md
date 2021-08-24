@@ -62,7 +62,7 @@
     -   [AWS-41_AWS_Summit_Online_2020.pdf](https://pages.awscloud.com/rs/112-TZM-766/images/AWS-41_AWS_Summit_Online_2020.pdf)
 
 -   「Fargate とは何か」だったりメリットをしりたい
-
+    -   [基礎から応用までじっくり学ぶECS Fargateを利用したコンテナ環境構築 #devio2020](https://www.youtube.com/watch?v=wnhgcJRsRd0) youtubeの動画
     -   [スタートアップのためのコンテナ入門 – AWS Fargate 編 | AWS Startup ブログ](https://aws.amazon.com/jp/blogs/startup/techblog-container-fargate-1/)
     -   [AWS Fargate とは？Amazon ECS との関係性やメリット・デメリットを解説｜コラム｜クラウドソリューション｜サービス｜法人のお客さま｜ NTT 東日本](https://business.ntt-east.co.jp/content/cloudsolution/column-171.html)
 
