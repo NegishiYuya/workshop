@@ -1,0 +1,103 @@
+{
+    "took": 1,
+    "timed_out": false,
+    "_shards": {
+        "total": 1,
+        "successful": 1,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 7,
+            "relation": "eq"
+        },
+        "max_score": 1.0,
+        "hits": [
+            {
+                "_index": "members",
+                "_type": "_doc",
+                "_id": "2j7zu3sB2dAT6ooEWOH3",
+                "_score": 1.0,
+                "_source": {
+                    "name": "登戸 三郎",
+                    "age": 31,
+                    "prefecture": "神奈川",
+                    "selfpr": "テスト　ベテラン"
+                }
+            },
+            {
+                "_index": "members",
+                "_type": "_doc",
+                "_id": "2z7zu3sB2dAT6ooEWOH3",
+                "_score": 1.0,
+                "_source": {
+                    "name": "浦和 一郎",
+                    "age": 29,
+                    "prefecture": "埼玉県",
+                    "selfpr": "開発経験　1年以上"
+                }
+            },
+            {
+                "_index": "members",
+                "_type": "_doc",
+                "_id": "3D7zu3sB2dAT6ooEWOH3",
+                "_score": 1.0,
+                "_source": {
+                    "name": "浦和 二郎",
+                    "age": 30,
+                    "prefecture": "埼玉県",
+                    "selfpr": "設計経験　1年以上"
+                }
+            },
+            {
+                "_index": "members",
+                "_type": "_doc",
+                "_id": "3T7zu3sB2dAT6ooEWOH3",
+                "_score": 1.0,
+                "_source": {
+                    "name": "浦和 三郎",
+                    "age": 31,
+                    "prefecture": "埼玉県",
+                    "selfpr": "テスト経験　1年以上"
+                }
+            },
+            {
+                "_index": "members",
+                "_type": "_doc",
+                "_id": "3j7zu3sB2dAT6ooEWOH3",
+                "_score": 1.0,
+                "_source": {
+                    "name": "八王子 一郎",
+                    "age": 29,
+                    "prefecture": "東京都",
+                    "selfpr": "開発　駆け出し"
+                }
+            },
+            {
+                "_index": "members",
+                "_type": "_doc",
+                "_id": "3z7zu3sB2dAT6ooEWOH3",
+                "_score": 1.0,
+                "_source": {
+                    "name": "八王子 二郎",
+                    "age": 30,
+                    "prefecture": "東京都",
+                    "selfpr": "設計　駆け出し"
+                }
+            },
+            {
+                "_index": "members",
+                "_type": "_doc",
+                "_id": "4D7zu3sB2dAT6ooEWOH3",
+                "_score": 1.0,
+                "_source": {
+                    "name": "八王子 三郎",
+                    "age": 31,
+                    "prefecture": "東京都",
+                    "selfpr": "テスト　駆け出し"
+                }
+            }
+        ]
+    }
+}
