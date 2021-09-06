@@ -144,6 +144,17 @@ GET /members/_search
 
 -   【問題】`name`に`八王子`を含むドキュメントを検索してください
 
+```bash
+GET /members/_search
+{
+    "query": {
+        "match": {
+            "name": "八王子"
+        }
+    }
+}
+```
+
 ### OR 条件で検索(同じ項目間)
 
 -   `prefecture`に`埼玉県`か`東京都`を含むドキュメントを検索する
@@ -180,6 +191,19 @@ GET /members/_search
 
 -   【問題】`age`が 30 より大きいドキュメントを検索してください
 
+```bash
+GET /members/_search
+{
+    "query": {
+        "range": {
+            "age": {
+                "gt": 30
+            }
+        }
+    }
+}
+```
+
 ### 複合検索
 
 `boolクエリ`を使うと複合条件を指定できる
@@ -208,6 +232,24 @@ GET /members/_search
 
 -   【問題】`prefecture`が「埼玉県」で、`selfpr`に「テスト」を含むドキュメントを検索してください
 
+```bash
+GET /members/_search
+{
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "match": { "prefecture": "埼玉県" }
+                },
+                {
+                    "match": { "selfpr": "テスト" }
+                }
+            ]
+        }
+    }
+}
+```
+
 「または(OR 条件)」は`should句`で表現。  
 1 つ 1 つの条件を配列で表現する。
 
@@ -233,6 +275,29 @@ GET /members/_search
 
 -   【問題】`name`に「八王子」を含む、または`age`が 30 以上 のドキュメントを検索してください
 
+```bash
+GET /members/_search
+{
+    "query": {
+        "bool": {
+            "should": [
+                {
+                    "match": { "name": "八王子" }
+                },
+                {
+                    "range": {
+                        "age": {
+                            "gte": 30
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+
+```
+
 「いずれも含まない」は`must_not句`で表現。  
 1 つ 1 つの条件を配列で表現する。
 
@@ -257,6 +322,23 @@ GET /members/_search
 ```
 
 -   【問題】`name`に「登戸」を含まない、`age`が 30 でないドキュメントを検索してください
+
+```bash
+{
+    "query": {
+        "bool": {
+            "must_not": [
+                {
+                    "match": { "name": "登戸" }
+                },
+                {
+                    "match": { "age": 30 }
+                }
+            ]
+        }
+    }
+}
+```
 
 `must`,`should`,`must_not`句は`bool`クエリの中で併せて使うことができる。
 
@@ -287,6 +369,26 @@ GET /members/_search
 ```
 
 -   【問題】`selfpr`に「テスト」を含む、`name`に「浦和」を含まないドキュメントを検索してください
+
+```bash
+GET /members/_search
+{
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "match": { "selfpr": "テスト" }
+                }
+            ],
+            "must_not": [
+                {
+                    "match": { "name": "浦和" }
+                }
+            ]
+        }
+    }
+}
+```
 
 ## 資料
 
