@@ -173,3 +173,120 @@ PUT /hoge/_search
   "status" : 405
 }
 ```
+
+### 形式の不備(抽出対象の欠損)
+
+リクエスト
+
+```bash
+GET /members/_search
+{
+    "query": {
+        "match": {
+        }
+    }
+}
+```
+
+レスポンス
+
+-   `error`に「エラーの発生個所が 4 行目 9 文字目が原因(`"line" : 4と"col" : 9`からわかる)」が表現されている。
+-   ステータスコードとして`400`が返却されている
+
+```bash
+{
+  "error" : {
+    "root_cause" : [
+      {
+        "type" : "parsing_exception",
+        "reason" : "No text specified for text query",
+        "line" : 4,
+        "col" : 9
+      }
+    ],
+    "type" : "parsing_exception",
+    "reason" : "No text specified for text query",
+    "line" : 4,
+    "col" : 9
+  },
+  "status" : 400
+}
+```
+
+### 形式の不備(抽出の演算子の欠損)
+
+リクエスト
+
+```bash
+GET /members/_search
+{
+    "query": {
+            "name": "八王子"
+        }
+    }
+}
+```
+
+レスポンス
+
+-   `error`に「エラーの発生個所が 3 行目 21 文字目が原因(`"line" : 3と"col" :21`からわかる)」が表現されている。
+-   ステータスコードとして`400`が返却されている
+
+```bash
+{
+  "error" : {
+    "root_cause" : [
+      {
+        "type" : "parsing_exception",
+        "reason" : "[name] query malformed, no start_object after query name",
+        "line" : 3,
+        "col" : 21
+      }
+    ],
+    "type" : "parsing_exception",
+    "reason" : "[name] query malformed, no start_object after query name",
+    "line" : 3,
+    "col" : 21
+  },
+  "status" : 400
+}
+```
+
+### 形式の不備(括弧の不備)
+
+リクエスト  
+※Kibana 上だとそもそも構文エラーで実行できないため、curl で実行
+
+```bash
+curl -X GET 'localhost:9200/members/_search?pretty'  -H "Content-Type: application/json" -d '
+{
+    "query": {
+        "range": {
+            "age": {
+                "gt": 30
+            }
+        }
+    }
+'
+```
+
+レスポンス
+
+-   `error`に「エラーの発生個所が 10 行目 1 文字目が原因(`line: 10, column: 1`からわかる)、`Unexpected end-of-input`から json の終端の表現に不備がある」が表現されている。
+-   ステータスコードとして`400`が返却されている
+
+```bash
+{
+  "error" : {
+    "root_cause" : [
+      {
+        "type" : "json_e_o_f_exception",
+        "reason" : "Unexpected end-of-input: expected close marker for Object (start marker at [Source: (org.elasticsearch.common.io.stream.ByteBufferStreamInput); line: 2, column: 1])\n at [Source: (org.elasticsearch.common.io.stream.ByteBufferStreamInput); line: 10, column: 1]"
+      }
+    ],
+    "type" : "json_e_o_f_exception",
+    "reason" : "Unexpected end-of-input: expected close marker for Object (start marker at [Source: (org.elasticsearch.common.io.stream.ByteBufferStreamInput); line: 2, column: 1])\n at [Source: (org.elasticsearch.common.io.stream.ByteBufferStreamInput); line: 10, column: 1]"
+  },
+  "status" : 400
+}
+```
