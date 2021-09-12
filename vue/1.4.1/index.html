@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- vue.jsをCDNから読み込み -->
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!-- 実際の処理は以下のjsに記載していく -->
+        <script src="practice.js" defer></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <!--
+                    v-forディレクティブを用いて、繰り返しを表現する
+                    Vue.jsでは標準のHTMLに対して、独自の属性(ディレクティブ)を使い、
+                    属性値の式の変化に応じたDOM操作を行う.
+                    v-で始まる属性名を持つ.
+                    テンプレートと同じくVueインスタンスをマウントした要素と
+                    その子孫でしか使えない.
+                -->
+                <li v-for="menu in menuArray" v-bind:key="menu.id">
+                    {{menu.id}} {{menu.name}} {{menu.price|parsePrice}}
+                </li>
+                <!--
+                    課題
+                    トッピングメニューを表示させてください.
+                    明太子おろし 100円
+                    生卵 50円
+                    ごはん大盛り 0円
+                -->
+            </ul>
+        </div>
+    </body>
+</html>
