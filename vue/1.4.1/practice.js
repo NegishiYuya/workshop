@@ -16,24 +16,6 @@ var lunchMenuArray = [
     }
 ]
 
-var lunchToppingArray = [
-    {
-        "id": 1,
-        "name": "明太子おろし",
-        "price": 100
-    },
-    {
-        "id": 2,
-        "name": "生卵",
-        "price": 50
-    },
-    {
-        "id": 3,
-        "name": "ごはん大盛り",
-        "price": 0
-    }
-]
-
 // Vueインスタンスを生成する
 var app = new Vue({
     // el: Vueインスタンスをマウントする対象の要素
@@ -42,8 +24,7 @@ var app = new Vue({
     // data: テンプレートで使用するデータのオブジェクト
     data: {
         menuArray: lunchMenuArray,
-        date: new Date(),
-        toppingArray: lunchToppingArray
+        date: new Date()
     },
 
     // filter: 汎用的なテキストフォーマットを適用する仕組み

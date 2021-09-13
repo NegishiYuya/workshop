@@ -55,10 +55,6 @@ var app = new Vue({
         totalPriceWithTax: function () {
             // 算出プロパティから算出プロパティを呼び出すこともできる
             return Math.floor(this.totalPrice * 1.08)
-        },
-        // 税込み合計金額を3で割る
-        priceDivideByThree: function () {
-            return Math.floor(this.totalPriceWithTax / 3)
         }
     }
 
