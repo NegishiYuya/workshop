@@ -19,8 +19,7 @@ var lunchMenuArray = [
 var app = new Vue({
     el: "#app",
     data: {
-        menuArray: lunchMenuArray,
-        isClosed: true
+        menuArray: lunchMenuArray
     },
     filters: {
         parsePrice: function (price) {
