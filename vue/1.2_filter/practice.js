@@ -16,11 +16,8 @@ var lunchMenuArray = [
     }
 ]
 
-// Vueインスタンスを生成する
 var app = new Vue({
-    // el: Vueインスタンスをマウントする対象の要素
     el: "#app",
-    // data: テンプレートで使用するデータのオブジェクト
     data: {
         menuArray: lunchMenuArray,
         date: new Date()
