@@ -16,27 +16,26 @@ var lunchMenuArray = [
     }
 ]
 
-// Vueインスタンスを生成する
 var app = new Vue({
-    // el: Vueインスタンスをマウントする対象の要素
     el: "#app",
-    // data: テンプレートで使用するデータのオブジェクト
     data: {
         menuArray: lunchMenuArray,
-        date: new Date()
+        isClosed: true
     },
-
-    // filter: 汎用的なテキストフォーマットを適用する仕組み
     filters: {
-        // 日付の変換
-        parseDate: function (date) {
-            // YYYY年M月D日
-            return date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日';
-        },
-        // 数値の変換
         parsePrice: function (price) {
-            // 3桁ごとに,区切り
             return Number(price).toLocaleString() + '円';
         }
+    },
+    computed: {
+        totalPrice: function () {
+            return this.menuArray.reduce(function (sum, menu) {
+                return sum + menu.price
+            }, 0)
+        },
+        totalPriceWithTax: function () {
+            return Math.floor(this.totalPrice * 1.08)
+        }
     }
+
 });
