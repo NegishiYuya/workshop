@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>1.6.1 v-show</title>
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="menu in menuArray" v-bind:key="menu.id">
+                    <!--
+                        課題
+                        v-showを使って、売り切れのメニューに対して
+                        「このメニューは現在売り切れです」という文字を表示させてください.
+                        なお、売り切れかどうかはメニューの配列の中に
+                        ある真偽値"isSoldOut"で管理している
+                    -->
+                    {{menu.id}} {{menu.name}} {{menu.price|parsePrice}}
+                    <span style="color: red">
+                        このメニューは現在売り切れです
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
