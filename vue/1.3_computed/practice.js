@@ -16,50 +16,11 @@ var lunchMenuArray = [
     }
 ]
 
-var lunchToppingArray = [
-    {
-        "id": 1,
-        "name": "明太子おろし",
-        "price": 100
-    },
-    {
-        "id": 2,
-        "name": "生卵",
-        "price": 50
-    },
-    {
-        "id": 3,
-        "name": "ごはん大盛り",
-        "price": 0
-    }
-]
-
-// Vueインスタンスを生成する
 var app = new Vue({
-    // el: Vueインスタンスをマウントする対象の要素
     el: "#app",
-
-    // data: テンプレートで使用するデータのオブジェクト
     data: {
-        menuArray: lunchMenuArray,
-        date: new Date(),
-        toppingArray: lunchToppingArray
+        menuArray: lunchMenuArray
     },
-
-    // filter: 汎用的なテキストフォーマットを適用する仕組み
-    filters: {
-        // 日付の変換
-        parseDate: function (date) {
-            // YYYY年M月D日
-            return date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日';
-        },
-        // 数値の変換
-        parsePrice: function (price) {
-            // 3桁ごとに,区切り
-            return Number(price).toLocaleString() + '円';
-        }
-    },
-
     // computed: 算出プロパティ…あるデータから派生するデータを変数として公開する
     computed: {
 

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>1.6 v-show</title>
+    </head>
+    <body>
+        <div id="app">
+            <!--
+                v-showで条件付きレンダリングを行う
+                v-show="引数(式を書くこともできる)" で表示・非表示を切り替える.
+                style属性(display)で制御をする.
+                DOMそのものを生成する・しないを制御するv-ifとの違いに留意すること.
+                頻繁に切り替わる値を条件に入れる場合は、DOMの生成コストなどを考えた場合、
+                v-showのほうが望ましい.
+            -->
+            <span v-show="isClosed">今日は定休日です！</span>
+        </div>
+    </body>
+</html>

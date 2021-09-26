@@ -16,12 +16,8 @@ var lunchMenuArray = [
     }
 ]
 
-// Vueインスタンスを生成する
 var app = new Vue({
-    // el: Vueインスタンスをマウントする対象の要素
     el: "#app",
-
-    // data: テンプレートで使用するデータのオブジェクト
     data: {
         menuArray: lunchMenuArray,
         date: new Date()
@@ -39,23 +35,5 @@ var app = new Vue({
             // 3桁ごとに,区切り
             return Number(price).toLocaleString() + '円';
         }
-    },
-
-    // computed: 算出プロパティ…あるデータから派生するデータを変数として公開する
-    computed: {
-
-        // 合計金額の算出
-        totalPrice: function () {
-            // reduceメソッドを使って変数sumに対してmenu.priceの値を合算
-            return this.menuArray.reduce(function (sum, menu) {
-                return sum + menu.price
-            }, 0)
-        },
-        // 合計金額を税込みで算出
-        totalPriceWithTax: function () {
-            // 算出プロパティから算出プロパティを呼び出すこともできる
-            return Math.floor(this.totalPrice * 1.08)
-        }
     }
-
 });
