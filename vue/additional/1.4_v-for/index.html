@@ -17,7 +17,20 @@
         -->
         <div id="app">
             <h2>試験成績表</h2>
-            <table></table>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>国語</td>
+                    <td>数学</td>
+                    <td>英語</td>
+                </tr>
+                <tr v-for="result in examResult" v-bind:key="result.id">
+                    <td>{{result.id}}</td>
+                    <td>{{result.Japanese}}</td>
+                    <td>{{result.Math}}</td>
+                    <td>{{result.English}}</td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>

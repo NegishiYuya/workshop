@@ -23,5 +23,6 @@ var examResult = [
 var app = new Vue({
     el: "#app",
     data: {
+        examResult: examResult
     },
 });
