@@ -16,10 +16,29 @@ var lunchMenuArray = [
     }
 ]
 
+var lunchToppingArray = [
+    {
+        "id": 1,
+        "name": "明太子おろし",
+        "price": 100
+    },
+    {
+        "id": 2,
+        "name": "生卵",
+        "price": 50
+    },
+    {
+        "id": 3,
+        "name": "ごはん大盛り",
+        "price": 0
+    }
+]
+
 var app = new Vue({
     el: "#app",
     data: {
-        menuArray: lunchMenuArray
+        menuArray: lunchMenuArray,
+        toppingArray: lunchToppingArray
     },
     filters: {
         parsePrice: function (price) {

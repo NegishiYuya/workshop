@@ -28,7 +28,11 @@
                 生卵 50円
                 ごはん大盛り 0円
             -->
-            <ul></ul>
+            <ul>
+                <li v-for="topping in toppingArray" v-bind:key="topping.id">
+                    {{topping.id}} {{topping.name}} {{topping.price|parsePrice}}
+                </li>
+            </ul>
         </div>
     </body>
 </html>
