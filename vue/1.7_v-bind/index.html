@@ -15,6 +15,7 @@
                 v-bind:属性名で属性にVueインスタンスの変数を展開する.
                 classの場合は以下のようにで指定することができる.
                 ・"{'class名' : 真偽値}"　⇒ trueの場合に展開される
+                ・class名などv-bindの式の右辺のjsonの中で"-"を含む文字列はシングルクォーテーションで囲わないとエラーになる。
             -->
             classへの指定例
             <button v-bind:class="{'disabled-button' : isClosed}">
@@ -23,12 +24,10 @@
             <!--
                 v-bind:属性名は :属性名　で書き換え可能
             -->
-            省略記法の例
+            classへの指定例(省略記法)
             <button :class="{'disabled-button' : isClosed}">
                 宴会の予約をする</button
             ><br />
-            disabledの例
-            <button :disabled="isClosed">宴会の予約をする</button><br />
         </div>
     </body>
 </html>

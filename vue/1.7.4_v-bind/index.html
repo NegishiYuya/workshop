@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>1.7.4 v-bind</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 
+                v-bind:disabled="真偽値" ⇒ "真偽値"がtrueの場合、"disabled=disabled"を付与
+            -->
+            classへの指定例
+            <button v-bind:disabled="isClosed">宴会の予約をする</button><br />
+            classへの指定例(省略記法)
+            <button :disabled="isClosed">宴会の予約をする</button><br />
+        </div>
+    </body>
+</html>

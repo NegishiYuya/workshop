@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>1.7.6 v-bind</title>
+    </head>
+    <body>
+        <div id="app">
+            <!--
+                v-bindで指定する値は算出プロパティを用いても表現できる.
+                式が長くなる場合などは算出プロパティを用いることが望ましい.
+            -->
+            <!-- classに設定する値を直接、値を指定して表現する -->
+            <button v-bind:class="{'disabled-button' : isClosed}">
+                宴会の予約をする</button
+            ><br />
+            <!-- classに設定する値を算出プロパティを用いて表現する -->
+            <button :class="reservationButtonClass">宴会の予約をする</button
+            ><br />
+
+            <!-- styleに設定する値を直接、値を指定して表現する -->
+            <span
+                v-bind:style="{'color': (isClosed ? 'red': ''), 'font-size':(isClosed ? '200%': '')}"
+                >定休日には宴会の予約は承れません</span
+            ><br />
+            <!-- styleに設定する値を算出プロパティを用いて表現する -->
+            <span :style="closeDayAlertStyle"
+                >定休日には宴会の予約は承れません</span
+            ><br />
+        </div>
+    </body>
+</html>
