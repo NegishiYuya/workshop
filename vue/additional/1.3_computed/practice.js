@@ -23,10 +23,13 @@ var examResult = [
 var app = new Vue({
     el: "#app",
     data: {
+        examResult: examResult
     },
 
     filters: {
-        // 引数pointの末尾に"点"という文字を付与する
+        addSuffixOfPoint: function (point) {
+            return point + '点';
+        }
     },
     computed: {
         // 受験者数
@@ -34,5 +37,10 @@ var app = new Vue({
             return this.examResult.length
         },
         // 国語の平均点
+        japanseAverage: function () {
+            return this.examResult.reduce(function (sum, result) {
+                return sum + result.Japanese
+            }, 0) / this.numberOfExaminee
+        }
     }
 });
