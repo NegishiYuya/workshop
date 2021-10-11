@@ -14,7 +14,7 @@
                 以下のpタグが表示されるようにしてください.
                 また、menuArrayの値を変更して、合計金額によって表示が変わることを確認してください。
             -->
-            <p>税込み価格が5,000円以上です</p>
+            <p v-if="totalPriceWithTax >= 5000">税込み価格が5,000円以上です</p>
             <ul>
                 <li v-for="menu in menuArray" v-bind:key="menu.id">
                     {{menu.id}} {{menu.name}} {{menu.price|parsePrice}}
