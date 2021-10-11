@@ -18,7 +18,7 @@
                         ある真偽値"isSoldOut"で管理している
                     -->
                     {{menu.id}} {{menu.name}} {{menu.price|parsePrice}}
-                    <span style="color: red">
+                    <span v-show="menu.isSoldOut" style="color: red">
                         このメニューは現在売り切れです
                     </span>
                 </li>
