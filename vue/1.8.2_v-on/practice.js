@@ -11,6 +11,9 @@ var app = new Vue({
         },
         countDown: function () {
             this.count--;
+        },
+        reset: function () {
+            this.count = 0;
         }
     }
 });
