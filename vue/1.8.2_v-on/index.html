@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>1.8.2 v-on</title>
+    </head>
+    <body>
+        <div id="app">
+            <button v-on:click="countUp">加算する</button>
+            <button @click="countDown">減算する</button>
+            <!--
+                課題
+                1-8-1のサンプルに対して、以下の機能を追加してください.
+                仕様：
+                「リセットする」というボタンで表示されている数字を0にする
+            -->
+            <span>{{count}}</span>
+        </div>
+    </body>
+</html>

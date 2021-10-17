@@ -16,6 +16,5 @@ var app = new Vue({
                 'font-size': (this.isClosed ? '200%' : '')
             }
         }
-
     }
 });
