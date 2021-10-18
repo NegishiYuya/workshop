@@ -1,4 +1,3 @@
-// 停車駅一覧
 var chuoLineStations = [
     {
         "id": "JC05", // 駅のID
@@ -43,5 +42,8 @@ var chuoLineStations = [
 ]
 
 var app = new Vue({
-    el: "#app"
+    el: "#app",
+    data: {
+        stationsList: chuoLineStations
+    },
 });
