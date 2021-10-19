@@ -15,7 +15,14 @@
                 practice.js内に定義されている「停車駅一覧」のうち、
                 「特快停車駅のみ」を表示させてください
             -->
-            <ul></ul>
+            <ul>
+                <li
+                    v-for="station in stationsList"
+                    v-if="station.isSpecialRapidStop"
+                >
+                    {{station.id}} {{station.name}}
+                </li>
+            </ul>
         </div>
     </body>
 </html>

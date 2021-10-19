@@ -16,6 +16,13 @@
                 ・アイスの商品名に対して、商品URLのリンクを付与すること
                 ・商品の画像を表示させること
             -->
+            <table>
+                <tr v-for="ice in iceArray">
+                    <td>{{ice.id}}</td>
+                    <td><a :href="ice.url">{{ice.name}}</a></td>
+                    <td><img :src="ice.imageSrc" /></td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>
