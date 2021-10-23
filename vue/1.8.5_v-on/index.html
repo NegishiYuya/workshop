@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>1.8.5 v-on</title>
+    </head>
+    <body>
+        <div id="app">
+            <!--
+                入力のイベントが発生したときに、Vueインスタンスの変数に値を代入する.
+                price に$event.target.valueの値を設定する
+                $eventは発生したイベント
+                $event.targetは発生したイベントの要素(今回の場合 inputタグ)
+                $event.target.valueは発生したイベントの要素のvalue(今回の場合 入力した値)
+            -->
+            <input type="number" @input="price = $event.target.value" /><br />
+
+            <!-- 入力エリアで入力した値が即時反映される -->
+            入力した金額：<span>{{price}}</span><br />
+            <!-- 入力エリアで入力した値を計算した値を表示する -->
+            税込み金額：<span>{{priceWithTax}}</span>
+        </div>
+    </body>
+</html>
