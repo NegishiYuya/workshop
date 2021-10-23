@@ -17,6 +17,18 @@
             ・「飲食店のメニュー一覧」の中にある「数量」は入力できるようにしてください。
             ・入力した数量×価格を「金額」として「数量」の入力欄の下に表示させてください。
         -->
-        <div id="app"></div>
+        <div id="app">
+            <ul>
+                <li v-for="menu in menuArray" :key="menu.id">
+                    商品名：{{menu.name}}<br />
+                    価格：{{menu.price}}<br />
+                    数量：<input
+                        type="number"
+                        @input="menu.quantity = $event.target.value"
+                    /><br />
+                    金額: {{menu.price * menu.quantity}}
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
