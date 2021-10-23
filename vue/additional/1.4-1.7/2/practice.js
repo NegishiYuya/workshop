@@ -21,3 +21,26 @@ var menuArray = [
         "price": 1230
     }
 ]
+
+var app = new Vue({
+    // idがrame-shopの要素にVueインスタンスをマウント
+    el: "#ramen-shop",
+    data: {
+        menuArray: menuArray
+    },
+    filters: {
+        // 引数で与えられた値段に「円」を付与して返却する
+        addSuffixYen: function (price) {
+            return price + "円"
+        }
+    },
+    computed: {
+        // 合計金額を算出する
+        totalPrice: function () {
+            // menuArrayの1件ずつに対して、合計金額+値段を計算する
+            return this.menuArray.reduce(function (sum, menu) {
+                return sum + menu.price
+            }, 0)
+        }
+    }
+})

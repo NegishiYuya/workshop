@@ -17,6 +17,14 @@
             ・「金額」は末尾に単位「円」を付与すること。ただし、HTMLに記載してはいけない。
             ・一覧のulタグの外側に合計金額を表示させること。
         -->
-        <div id="ramen-shop"></div>
+        <div id="ramen-shop">
+            <ul>
+                <li v-for="menu in menuArray" :key="menu.id">
+                    <!-- filtersを使って、単位「円」を付与する -->
+                    {{menu.name}} {{menu.price|addSuffixYen}}
+                </li>
+            </ul>
+            合計金額： {{totalPrice|addSuffixYen}}
+        </div>
     </body>
 </html>

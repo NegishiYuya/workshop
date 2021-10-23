@@ -26,3 +26,11 @@ var chuoLineStations = [
         "isSpecialRapidStop": true
     }
 ]
+
+var app = new Vue({
+    // idがstation-listの要素にVueインスタンスをマウント
+    el: "#station-list",
+    data: {
+        stationsList: chuoLineStations
+    }
+})
