@@ -17,6 +17,9 @@
                 Vueインスタンスのmethodsは使わないこと
                 v-onは省略記法で実装すること
             -->
+            <button @click="count++">加算する</button>
+            <button @click="count--">減算する</button>
+            <button @click="count = 0">リセットする</button>
             <span>{{count}}</span>
         </div>
     </body>
