@@ -19,6 +19,17 @@
             ・「金額」は末尾に単位「円」を付与すること。ただし、HTMLに記載してはいけない。
             ・金額が600円を超える商品には、class "alert"を付与してください
         -->
-        <div id="cafe"></div>
+        <div id="cafe">
+            <ul>
+                <li v-for="menu in menuArray" :key="menu.id">
+                    <!-- v-bindを使ってhrefにurlを設定する -->
+                    <a :href="menu.url">{{menu.name}}</a>
+                    <!-- menu.price > 600 の時にclass alertを付与する -->
+                    <span :class="{'alert': menu.price > 600}"
+                        >{{menu.price|addSuffixYen}}</span
+                    >
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

@@ -20,6 +20,14 @@
                 なお、後々の開発にて「特快停車」の表示の出し分けをするためのボタンを表示する予定が
                 あるため、表示切り替えの頻度が高くなる想定である。
         -->
-        <div id="station-list"></div>
+        <div id="station-list">
+            <ul>
+                <li v-for="station in stationsList" :key="station.id">
+                    {{station.id}} {{station.name}}
+                    <!-- 表示・非表示の切り替えの頻度が高いため、v-showで実装 -->
+                    <span v-show="station.isSpecialRapidStop">特快停車</span>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

@@ -25,3 +25,15 @@ var menuArray = [
         "url": "https://product.starbucks.co.jp/beverage/tea/4524785034204/?category=beverage"
     }
 ]
+
+var app = new Vue({
+    el: "#cafe",
+    data: {
+        menuArray: menuArray
+    },
+    filters: {
+        addSuffixYen: function (price) {
+            return price + "円"
+        }
+    }
+})
