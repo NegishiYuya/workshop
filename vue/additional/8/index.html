@@ -21,6 +21,23 @@
                 「特快停車」を表示させる
                 「特快停車」を表示させない
         -->
-        <div></div>
+        <div id="station-list">
+            <button @click="switchDispSpecialRapidStop">
+                「特快停車」を表示させる
+            </button>
+            <button @click="switchHideSpecialRapidStop">
+                「特快停車」を表示させない
+            </button>
+            <ul>
+                <li v-for="station in stationsList" :key="station.id">
+                    {{station.id}} {{station.name}}
+                    <!-- 表示・非表示の切り替えの頻度が高いため、v-showで実装 -->
+                    <span
+                        v-show="dispSpecialRapidStop && station.isSpecialRapidStop"
+                        >特快停車</span
+                    >
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

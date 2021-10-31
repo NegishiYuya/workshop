@@ -20,7 +20,21 @@
                 ※数量指定用のプルダウンはdivタグ外に部品を用意したので、それを参考にしてください
             ・入力した数量×価格を「金額」として「数量」の入力欄の下に表示させてください。
         -->
-        <div></div>
+        <div id="app">
+            <ul>
+                <li v-for="menu in menuArray" :key="menu.id">
+                    商品名：{{menu.name}}<br />
+                    価格：{{menu.price}}<br />
+                    数量：<select @input="menu.quantity = $event.target.value">
+                        <option value="0">0個</option>
+                        <option value="1">1個</option>
+                        <option value="2">2個</option>
+                    </select>
+                    <br />
+                    金額: {{menu.price * menu.quantity}}
+                </li>
+            </ul>
+        </div>
         <hr />
         <!-- 数量指定用のプルダウンサンプル -->
         数量指定用のプルダウンサンプル
