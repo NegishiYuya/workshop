@@ -22,10 +22,5 @@ var app = new Vue({
     data: {
         booksArray: booksArray, // 絵本の一覧 
         imgUrl: '' // 表示させる画像のURL
-    },
-    methods: {
-        dispImage: function (imgUrl) {
-            this.imgUrl = imgUrl
-        }
     }
 });
