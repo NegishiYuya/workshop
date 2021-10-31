@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>1.8.16 v-on</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 
+                v-on:イベント.stop のサンプル。
+                
+                idが"modal-background"の要素は初期表示時に隠している要素。
+                "modal-background"の要素の子要素にモーダルを表示する。
+                "modal-background"はモーダルの背景となる部分である。
+
+                背景を押して、モーダルを閉じることと、
+                その子要素となるモーダル内のボタンを押下しても、
+                モーダルの表示を維持することをモーダルの要素に付与した、
+                @click.stopで実現している。
+            -->
+            <div>
+                商品注文画面
+                <button @click="openModal()">注文する</div>
+                <!-- モーダルの背景を押下することで、モーダルと背景を閉じる -->
+                <div :class="backgroundClass" @click="closeModal()"　id="modal-background">
+
+                    <!-- モーダルの要素まででイベントの伝播を止める -->
+                    <div class="modal" @click.stop="stopPropagation()">
+                        注文数 {{orderCount}} 個
+                        <button @click="increaseCount()">数量を増やす</button>
+                        <button @click="decreaseCount()">数量を減らす</button>
+                        <button @click="order()">注文する</button>
+                        <p>「注文する」ボタンもしくは<br>モーダルの外側を押すとモーダルが閉まります</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

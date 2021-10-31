@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>1.8.15 v-on</title>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 
+                v-on:イベント.stopで親要素へのイベントの伝播を抑制できる。
+                (javascriptのstopPropagationの挙動) 
+
+                参考：
+                https://techblog.roxx.co.jp/entry/2019/02/08/122914
+                https://www.jquerystudy.info/reference/events/stopPropagation.html
+
+                以下のサンプルを例に説明をする。
+                以下はdivタグによる親子構造を持つ。(親が子を内包しているというのがポイント！！)
+                親要素と子要素それぞれにclickイベントが設定されている。
+                (A) 子要素のclickイベントが実行された後、親要素のclickイベントが実行される。
+                    これを「イベントの伝播」という。
+                    「伝播」は「伝わり広がる」ということ。
+                    子要素(狭い範囲)から親要素(覆っている広い範囲)に広がるということ。
+                    alertChild() ⇒実行される
+                    alertParent() ⇒実行されない
+
+                (B)子要素のclickイベントが実行された後、そこでイベントの伝播を止める。
+                    子要素のv-on:clickに.stopをつけることによって、
+                    子要素のイベントが実行後、そこで処理を終了させ、
+                    親要素へのイベントの伝播を止めることができる。
+                    親要素のclickイベントを発生させない。
+                    alertChild() ⇒実行される
+                    alertParent() ⇒実行されない
+            -->
+            (A)子要素⇒親要素の順にイベント発火
+            <div class="parent" @click="alertParent()">
+                親要素
+                <div class="child" @click="alertChild()">子要素</div>
+            </div>
+            <hr />
+            (B)子要素のみイベント発火
+            <div class="parent" @click="alertParent()">
+                親要素
+                <div class="child" @click.stop="alertChild()">子要素</div>
+            </div>
+            <hr />
+            <!--
+                (参考：C)子要素のclickイベントが実行された後、そこでイベントの伝播を止める。
+                    親要素のclickイベントを発生させない。
+                    子要素のv-on:clickに.stopをつけることによって、
+                    親要素へのイベントの伝播を止めることができる。
+                    alertGrandChild()  ⇒実行される
+                    alertChild() ⇒実行される ★ここで打ち切り
+                    alertParent() ⇒実行されない
+            -->
+            (参考：C)孫・子要素のみイベント発火
+            <div class="parent" @click="alertParent()">
+                親要素
+                <div class="child" @click.stop="alertChild()">
+                    子要素
+                    <div class="grand-child" @click="alertGrandChild()">
+                        孫要素
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

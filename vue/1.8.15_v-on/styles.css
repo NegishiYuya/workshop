@@ -1,0 +1,13 @@
+.parent {
+    background-color: chocolate;
+    width: 100%;
+    border: 2px solid white;
+}
+.child {
+    background-color: yellow;
+    width: 60%;
+}
+.grand-child {
+    background-color: white;
+    width: 30%;
+}
