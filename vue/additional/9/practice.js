@@ -26,3 +26,19 @@ var chuoLineStations = [
         "isSpecialRapidStop": true
     }
 ]
+
+var app = new Vue({
+    // idがstation-listの要素にVueインスタンスをマウント
+    el: "#station-list",
+    data: {
+        stationsList: chuoLineStations,
+        dispOnlySpecialRapidStop: false // 「特快停車駅のみ表示」
+    },
+    methods: {
+        // 「特快停車駅のみ表示」の切り替え
+        switchDispSpecialRapidStop: function () {
+            this.dispOnlySpecialRapidStop = !this.dispOnlySpecialRapidStop;
+        }
+    },
+
+})

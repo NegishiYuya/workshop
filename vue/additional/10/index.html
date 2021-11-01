@@ -19,6 +19,19 @@
             ・「絵本の一覧」の中にある「数量」はテキスト入力できるようにしてください。
             ・入力した数量×価格を「金額」として「数量」の入力欄の下に表示させてください。
         -->
-        <div></div>
+        <div id="app">
+            <ul>
+                <li v-for="book in booksArray" :key="book.id">
+                    <a :href="book.url">商品名：{{book.name}}</a><br />
+                    価格：{{book.price}}<br />
+                    数量：<input
+                        type="number"
+                        @input="book.quantity = $event.target.value"
+                    />
+                    <br />
+                    金額: {{book.price * book.quantity}}
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

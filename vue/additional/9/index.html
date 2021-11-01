@@ -19,6 +19,19 @@
             ・すべての駅について「駅のID」「駅名」を表示させること
             ・ulタグとliタグを使って表示させること
         -->
-        <div></div>
+        <div id="station-list">
+            <button @click="switchDispSpecialRapidStop">
+                特快停車駅のみ表示
+            </button>
+            <ul>
+                <li
+                    v-for="station in stationsList"
+                    :key="station.id"
+                    v-show="!dispOnlySpecialRapidStop || (dispOnlySpecialRapidStop && station.isSpecialRapidStop)"
+                >
+                    {{station.id}} {{station.name}}
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

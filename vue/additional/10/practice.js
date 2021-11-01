@@ -29,3 +29,10 @@ var booksArray = [
         "url": "https://www.hakusensha.co.jp/books/9784592762492"
     }
 ]
+
+var app = new Vue({
+    el: "#app",
+    data: {
+        booksArray: booksArray
+    }
+});
