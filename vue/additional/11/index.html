@@ -23,7 +23,7 @@
         <div id="app">
             <ul>
                 <li v-for="menu in menuArray" :key="menu.id">
-                    商品名：{{menu.name}}<br />
+                    <a :href="menu.url">商品名：{{menu.name}}</a><br />
                     価格：{{menu.price}}<br />
                     数量：<select @input="menu.quantity = $event.target.value">
                         <option value="0">0個</option>

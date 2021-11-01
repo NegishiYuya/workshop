@@ -22,7 +22,7 @@
         <div id="app">
             <ul>
                 <li v-for="book in booksArray" :key="book.id">
-                    商品名：{{book.name}}<br />
+                    <a :href="book.url">商品名：{{book.name}}</a><br />
                     価格：{{book.price}}<br />
                     数量：<input
                         type="number"
