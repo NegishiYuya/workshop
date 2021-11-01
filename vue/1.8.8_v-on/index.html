@@ -21,6 +21,15 @@
             <ul>
                 <li v-for="menu in menuArray" :key="menu.id">
                     <a :href="menu.url">{{menu.name}}</a>
+                    <!-- v-bindで指定するclassにmethodsで定義した関数の戻り値を利用-->
+                    金額：<span :class="getPriceClass(menu.price)"
+                        >{{menu.price|addSuffixYen}}</span
+                    ><br />
+                    <!-- ホイップクリーム付き金額をgetPriceClassの引数に利用 -->
+                    ホイップクリーム付き金額：<span
+                        :class="getPriceClass(priceWithWhipCream(menu.price))"
+                        >{{priceWithWhipCream(menu.price)|addSuffixYen}}</span
+                    >
                 </li>
             </ul>
         </div>
