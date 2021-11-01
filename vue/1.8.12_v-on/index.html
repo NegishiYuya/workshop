@@ -19,7 +19,10 @@
                     「選択してください」以外が選択されている場合、着色を外す
                     ※クラス"alert"をつけることで要素を赤くできます
             -->
-            <select>
+            <select
+                @change="bookName = $event.target.value"
+                :class="pulldownClass"
+            >
                 <option value="">選択してください</option>
                 <option value="1">ノラネコぐんだん ラーメンやさん</option>
                 <option value="2">ノラネコぐんだん アイスのくに</option>
