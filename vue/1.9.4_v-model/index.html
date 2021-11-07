@@ -19,6 +19,12 @@
                 ・上記を満たしていない場合、入力エリアを赤くする
             ・外部のAPIなどから受け取った値をフォームに入れることもある
         -->
-        <div id="app"></div>
+        <div id="app">
+            テキスト入力<input
+                type="text"
+                v-model="textInput"
+                :class="textInputClass"
+            />
+        </div>
     </body>
 </html>
