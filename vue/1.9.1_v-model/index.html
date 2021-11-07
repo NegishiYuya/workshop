@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>1.9.1 v-model</title>
+    </head>
+    <body>
+        <div id="app">
+            <!--
+                v-modelを使ってフォームに入力した値とdataプロパティの同期をさせることができる
+
+                以下を確認してみましょう。
+                ・コンソールでapp.countの値を変更して、入力UIに表示されている値が変更されること
+                ・入力UIに数字を入力したあと、コンソールでapp.countの値を確認し、変更されていること
+            -->
+            <input type="number" v-model="count" /><br />
+            入力した数字：{{count}}
+        </div>
+    </body>
+</html>
