@@ -19,6 +19,16 @@
                 金額が5000円を超える場合は赤文字で表示してください。
                 金額が0円の場合は「無料」と表示してください。
         -->
-        <div></div>
+        <div id="app">
+            <ul>
+                <li v-for="goods in goodsArray" :key="goods.id">
+                    <a :href="goods.url">{{goods.name}}</a>
+                    金額：<span :class="getPriceClass(goods.price)"
+                        >{{getPriceText(goods.price)}}</span
+                    >
+                    <span>送料：{{getPriceText(goods.postagePrice)}}</span>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

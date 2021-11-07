@@ -25,3 +25,33 @@ var goodsArray = [
         "url": "https://item.rakuten.co.jp/marukamemeisanten/10000006/"
     }
 ]
+
+var app = new Vue({
+    el: "#app",
+    data: {
+        goodsArray: goodsArray
+    },
+    methods: {
+        /**
+         * 商品の数量をイベントとして入力された値で更新する
+         * @param {obj} goods 商品
+         * @param {obj} event イベント
+         */
+        setQuantity: function (goods, event) {
+            goods.quantity = event.target.value
+        },
+        /**
+         * 商品の金額を送料込みで返却する
+         * @param {Number} price 価格
+         * @param {Number} quantity 数量
+         * @param {Number} postagePrice 送料
+         * @return {Number} 送料込みの商品の金額
+         */
+        getPriceWithPostage: function (price, quantity, postagePrice) {
+            if (quantity == 0) {
+                return 0
+            }
+            return price * quantity + postagePrice
+        }
+    }
+});
