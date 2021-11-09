@@ -21,6 +21,20 @@
                 数量が0個の場合⇒0
                 数量が1個以上⇒価格×数量+送料
         -->
-        <div></div>
+        <div id="app">
+            <ul>
+                <li v-for="goods in goodsArray">
+                    {{goods.name}}
+                    <br />
+                    数量：<select @change="setQuantity(goods,$event)">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    金額：{{getPriceWithPostage(goods.price,goods.quantity,goods.postagePrice)}}
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

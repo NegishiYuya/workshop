@@ -20,8 +20,8 @@
             8文字以内で入力してください。(必須項目)<br />
             <input
                 type="text"
-                :change="setText($event)"
-                :style="textAreaClass"
+                @change="setText($event)"
+                :class="textAreaClass"
             /><br />
             {{textLength}}文字入力
         </div>

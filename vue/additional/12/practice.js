@@ -22,3 +22,29 @@ var goodsArray = [
         "url": "https://item.rakuten.co.jp/marukamemeisanten/10000006/"
     }
 ]
+
+var app = new Vue({
+    el: "#app",
+    data: {
+        goodsArray: goodsArray,
+        priceLimit: 5000 // alertをつける閾値の金額
+    },
+    methods: {
+        /**
+         * 価格に付与するクラスを返却する
+         * @param {Number} price 金額
+         * @return {String} クラス名
+         */
+        getPriceClass: function (price) {
+            return price >= this.priceLimit ? 'alert' : ''
+        },
+        /**
+         * 価格の文字列を返却する
+         * @param {Number} price 金額
+         * @return {String} 価格の文字列
+         */
+        getPriceText: function (price) {
+            return price == 0 ? "無料" : price + "円"
+        }
+    }
+})
