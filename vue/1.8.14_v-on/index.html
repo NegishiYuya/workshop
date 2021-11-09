@@ -18,7 +18,12 @@
                         商品の名前にリンクが設定されている。
                         リンクを押下すると、画像が表示される
                 -->
-                <li></li>
+                <li v-for="book in booksArray">
+                    <!-- aタグのデフォルトの動きを封じて、画像のURLの設定処理を実行 -->
+                    <a href="" @click.prevent="setDispImage(book.url)"
+                        >{{book.name}}</a
+                    >
+                </li>
             </ul>
             <img :src="imgUrl" />
         </div>
