@@ -12,7 +12,24 @@
     <body>
         <!-- 
             課題
+            以下のdivタグの中に、モーダルを使った画面を作ってください。
+            
+            仕様：
+            ・「モーダルを開く」を押下すると、モーダルが開く。(実装済)
+            ・モーダル内にpractice.jsに定義した「絵本の一覧」が表示される。絵本の一覧はulタグの中に実装すること。
+                ・絵本名にリンクが設定されていて、押下すると別タブで絵本の紹介画面が開く。
+            ・モーダルの外側を押下するとモーダルを閉じることができる。
         -->
-        <div></div>
+        <div id="app">
+            <div>
+                絵本をモーダルから探す
+                <button @click="openModal()">モーダルを開く</div>
+                <div :class="backgroundClass" @click="closeModal()" id="modal-background">
+                    <div class="modal">
+                        <ul></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
