@@ -20,6 +20,19 @@
             ・ラベルを押下した際にチェックされるようにしてください。
             ・チェックボックスのリストの外側に、選択されている値を表示させてください。
         -->
-        <div id="app"></div>
+        <div id="app">
+            <ul>
+                <li v-for="book in booksArray">
+                    <input
+                        type="checkbox"
+                        :id="book.id"
+                        :value="book.id"
+                        v-model="checkboxMultiple"
+                    />
+                    <label :for="book.id">{{book.name}}</label><br />
+                </li>
+            </ul>
+            {{ checkboxMultiple }}
+        </div>
     </body>
 </html>
