@@ -4,12 +4,12 @@ var booksArray = [
         "id": "1", // id
         "name": "ノラネコぐんだん パンこうじょう", // 商品名
         "url": "https://www.hakusensha.co.jp/books/9784592761570",
-        "price": 1320, // 絵本の価格
+        "price": 1320,
         "order": [ // 注文の履歴
             {
                 "id": 1, // 注文のID
                 "user_id": 1, // 注文したユーザのID
-                "quantity": 2 // 注文数
+                "quantity": 2 // 注文した数量
             },
             {
                 "id": 2,
@@ -50,3 +50,15 @@ var booksArray = [
         ]
     }
 ]
+
+var app = new Vue({
+    el: "#app",
+    data: {
+        booksArray: booksArray
+    },
+    methods: {
+        getAmount: function (price, quantity) {
+            return price * quantity
+        },
+    }
+});
