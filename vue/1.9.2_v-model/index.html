@@ -20,7 +20,7 @@
                 <li v-for="goods in goodsArray">
                     {{goods.name}}
                     <br />
-                    数量：<select>
+                    数量：<select v-model="goods.quantity">
                         <option value="0">0</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
