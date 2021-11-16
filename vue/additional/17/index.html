@@ -23,6 +23,19 @@
                 のような形式
             ・注文の一単位ずつ、「注文したユーザーのID」「注文した数量」「金額(絵本の価格×注文数)」を表示する
         -->
-        <div></div>
+        <div id="app">
+            <ul>
+                <li v-for="book in booksArray" :key="book.id">
+                    {{book.name}}
+                    <ul>
+                        <li v-for="order in book.order" :key="order.id">
+                            注文したユーザーのID：{{order.user_id}}<br />
+                            注文した数量：{{order.quantity}}<br />
+                            金額：{{getAmount(book.price,order.quantity)}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>

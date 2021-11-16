@@ -24,6 +24,19 @@
                 押下後に「食べたいパンを送信しました」というアラートを表示させること。
                 また、入力した値を保持させること。
         -->
-        <div></div>
+        <div id="app">
+            <form @submit.prevent="sendData">
+                <ul>
+                    <li v-for="bread in breadList">
+                        <input
+                            type="radio"
+                            name="bread-name"
+                            :value="bread.value"
+                        />{{bread.name}}
+                    </li>
+                </ul>
+                <input type="submit" value="食べたいパンを送信" />
+            </form>
+        </div>
     </body>
 </html>

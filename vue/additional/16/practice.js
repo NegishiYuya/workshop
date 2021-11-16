@@ -25,7 +25,8 @@ var booksArray = [
 var app = new Vue({
     el: "#app",
     data: {
-        backgroundClass: ["background", "background-hide"] // モーダルの親要素のclass
+        backgroundClass: ["background", "background-hide"], // モーダルの親要素のclass
+        booksArray: booksArray
     },
     methods: {
         // モーダルとその背景を表示させる

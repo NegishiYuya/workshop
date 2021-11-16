@@ -16,7 +16,7 @@
             
             仕様：
             ・「モーダルを開く」を押下すると、モーダルが開く。(実装済)
-            ・モーダル内にpractice.jsに定義した「絵本の一覧」が表示される。絵本の一覧はulタグの中に実装すること。
+            ・モーダル内にpractice.jsに定義した「絵本の一覧」が表示される。
                 ・絵本名にリンクが設定されていて、押下すると別タブで絵本の紹介画面が開く。
             ・モーダルの外側を押下するとモーダルを閉じることができる。
         -->
@@ -25,8 +25,12 @@
                 絵本をモーダルから探す
                 <button @click="openModal()">モーダルを開く</div>
                 <div :class="backgroundClass" @click="closeModal()" id="modal-background">
-                    <div class="modal">
-                        <ul></ul>
+                    <div class="modal" @click.stop="stopPropagation()">
+                        <ul>
+                            <li v-for="book in booksArray" :key="book.id">
+                                <a :href="book.url" target="blank">{{book.name}}</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
