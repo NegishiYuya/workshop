@@ -18,7 +18,7 @@ var breadList = [
 var app = new Vue({
     el: "#app",
     data: {
-        breadList :breadList
+        breadList: breadList
     },
     methods: {
         sendData: function () {
