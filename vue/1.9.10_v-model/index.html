@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>1.9.10 v-model</title>
+    </head>
+    <body>
+        <!--
+            v-model セレクトボックス(単一選択型)の例
+        -->
+        <div id="app">
+            <select v-model="selectSingle">
+                <option value="1">選択項目1</option>
+                <option value="2">選択項目2</option>
+                <option value="3">選択項目3</option></select
+            ><br />
+            <button @click="selectSingleFromAPI">
+                APIの実行結果をセレクトボックスに反映する</button
+            ><br />
+            セレクトボックスの選択状態：{{ selectSingle }}
+        </div>
+    </body>
+</html>
