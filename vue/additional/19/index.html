@@ -18,9 +18,11 @@
             ・「入力内容を保存」を押下すると、項目「姓」と項目「名」が保存される
             ・「入力内容を呼び出し」を押下すると、保存した入力内容が項目「姓」と項目「名」に反映される
         -->
-        <div>
-            <form>
-                <button>入力内容を呼び出し</button><br />
+        <div id="app">
+            <form @submit.prevent="saveData()">
+                姓：<input type="text" v-model="firstName" /> <br />
+                名：<input type="text" v-model="lastName" /> <br />
+                <button @click="applyData()">入力内容を呼び出し</button><br />
                 <input type="submit" value="入力内容を保存" />
             </form>
         </div>
