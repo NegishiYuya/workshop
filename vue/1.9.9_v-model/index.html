@@ -27,6 +27,21 @@
             ・選択を解除するボタンを作成してください。
 
         -->
-        <div id="app"></div>
+        <div id="app">
+            <ul>
+                <li v-for="book in booksArray">
+                    <input
+                        type="radio"
+                        :id="book.id"
+                        :value="book.id"
+                        v-model="radioButtonVal"
+                    />
+                    <label :for="book.id">{{book.name}}</label><br />
+                </li>
+            </ul>
+            <br />
+            <button @click="clearRadioButton">選択を解除する</button><br />
+            {{ dispBookName(radioButtonVal) }}
+        </div>
     </body>
 </html>
