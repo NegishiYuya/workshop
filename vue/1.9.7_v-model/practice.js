@@ -13,3 +13,11 @@ var booksArray = [
         "name": "ノラネコぐんだん ラーメンやさん"
     }
 ]
+
+var app = new Vue({
+    el: "#app",
+    data: {
+        booksArray: booksArray,
+        checkboxMultiple: [] // 複数回答のチェックボックスは配列で扱う
+    }
+});
