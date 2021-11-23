@@ -1,0 +1,11 @@
+ul {
+    list-style: none;
+}
+.rapid {
+    background-color: orange;
+    margin: 5px;
+}
+.special-rapid {
+    background-color: aqua;
+    margin: 5px;
+}
