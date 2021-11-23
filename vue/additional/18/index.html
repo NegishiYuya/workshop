@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
         <script src="practice.js" defer></script>
-        <link rel="stylesheet" type="text/css" href="styles.css" />
         <title>18</title>
     </head>
     <body>
@@ -25,6 +24,16 @@
                 ・practice.jsに定義されている「購入履歴取得APIのレスポンス」の中に
                 定義されている商品の数量を数量に反映する
         -->
-        <div id="app"></div>
+        <div id="app">
+            <ul>
+                <li v-for=" goods in goodsArray">
+                    {{goods.name}} <br />
+                    数量：<input type="number" v-model="goods.quantity" />
+                    <br />
+                    金額：{{getAmount(goods.price,goods.quantity)}}
+                </li>
+            </ul>
+            <button @click="applyLastOrder">購入履歴を反映する</button>
+        </div>
     </body>
 </html>

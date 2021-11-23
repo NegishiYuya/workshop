@@ -32,6 +32,30 @@
                 https://tadaken3.hatenablog.jp/entry/vue-scope-this
                 https://qiita.com/beanzou/items/1d161758f67a438029bd
         -->
-        <div></div>
+        <div id="app">
+            <ul>
+                <li v-for="goods in goodsArray">
+                    {{goods.name}}
+                    <br />
+                    数量：<select
+                        v-model="goods.quantity"
+                        :class="getPullDownClass(goods.quantity)"
+                    >
+                        <option value="0">選択してください</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </li>
+            </ul>
+            一括で数量を選択する<br />
+            <select v-model="quantityForAll">
+                <option value="0">選択してください</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <button @click="setQuantityAll()">確定する</button>
+        </div>
     </body>
 </html>
