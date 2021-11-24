@@ -28,21 +28,58 @@
                 いずれの場合も入力項目をパスワード以外の入力値を保持させること
         -->
         <div id="member-form">
-            <span>ここにメッセージを出力</span>
-            <form>
-                氏名<input type="text" /><input type="text" /><br />
-                パスワード<input type="password" /><br />
-                メールアドレス<input type="email" /><br />
+            <span :class="messageClass">{{message}}</span>
+            <form @submit.prevent="registration()">
+                氏名<input
+                    type="text"
+                    name="first-name"
+                    v-model="firstName"
+                /><input
+                    type="text"
+                    name="last-name"
+                    v-model="lastName"
+                /><br />
+                メールアドレス<input
+                    type="email"
+                    name="email"
+                    v-model="email"
+                /><br />
+
+                パスワード<input
+                    type="password"
+                    name="password"
+                    v-model="password"
+                /><br />
                 性別
-                <input type="radio" />
-                <label>男性</label>
-                <input type="radio" />
-                <label>女性</label><br />
-                メール通知<input type="checkbox" />
-                <label>新着通知メール</label>
-                <input type="checkbox" />
-                <label>メールマガジン</label><br />
-                <input type="submit" value="会員登録する" />
+                <input
+                    type="radio"
+                    id="gender-male"
+                    value="1"
+                    v-model="gender"
+                />
+                <label for="gender-male">男性</label>
+                <input
+                    type="radio"
+                    id="gender-female"
+                    value="2"
+                    v-model="gender"
+                />
+                <label for="gender-female">女性</label><br />
+                メール通知<input
+                    type="checkbox"
+                    id="mail-service-1"
+                    value="1"
+                    v-model="mailService"
+                />
+                <label for="mail-service-1">新着通知メール</label>
+                <input
+                    type="checkbox"
+                    id="mail-service-2"
+                    value="2"
+                    v-model="mailService"
+                />
+                <label for="mail-service-2">メールマガジン</label><br />
+                <input type="submit" value="入力内容を保存" />
             </form>
         </div>
     </body>

@@ -16,3 +16,11 @@ var poemList = [
         "url": "https://ogurasansou.jp.net/columns/hyakunin/2017/10/17/220/"
     },
 ]
+
+var app = new Vue({
+    el: "#poem-list",
+    data: {
+        poemList: poemList,
+        dispLink: "_self" // aタグのtargetに設定する値
+    },
+})

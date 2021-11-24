@@ -22,6 +22,19 @@
                 practice.jsに定義した「購入履歴」の最新の「注文した商品」を
                 チェックボックスに反映されるようにしてください。
         -->
-        <div id="app"></div>
+        <div id="app">
+            <ul>
+                <li v-for="goods in goodsArray">
+                    <input
+                        type="checkbox"
+                        :id="goods.id"
+                        :value="goods.id"
+                        v-model="goodsCheckBox"
+                    />
+                    <label :for="goods.id">{{goods.name}} </label>
+                </li>
+            </ul>
+            <button @click="applyLastOrder">最新の注文を反映する</button>
+        </div>
     </body>
 </html>
