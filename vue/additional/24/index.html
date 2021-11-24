@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>24</title>
+    </head>
+    <body>
+        <!--
+            課題
+            以下を満たす会員登録フォームを作成してください。
+
+            仕様：
+            ・氏名は「姓」「名」を入力可能で必須項目。
+            ・メールアドレスは必須項目。
+            ・パスワードは必須項目。
+            ・性別は任意項目。
+            ・メール通知は任意項目。
+            ・「会員登録する」を押下すると入力チェックが行われる。
+                必須項目が1項目でも入っていない場合は
+                    spanタグに「入力に不備があります」と表示させ、かつ
+                    赤文字にすること(class "error"を付与)
+                必須項目がすべて入っている場合は、
+                    spanタグに「登録を完了しました」と表示させ、かつ
+                    緑文字にすること(class "success"を付与)
+                いずれの場合も入力項目をパスワード以外の入力値を保持させること
+        -->
+        <div id="member-form">
+            <span>ここにメッセージを出力</span>
+            <form>
+                氏名<input type="text" /><input type="text" /><br />
+                パスワード<input type="password" /><br />
+                メールアドレス<input type="email" /><br />
+                性別
+                <input type="radio" />
+                <label>男性</label>
+                <input type="radio" />
+                <label>女性</label><br />
+                メール通知<input type="checkbox" />
+                <label>新着通知メール</label>
+                <input type="checkbox" />
+                <label>メールマガジン</label><br />
+                <input type="submit" value="会員登録する" />
+            </form>
+        </div>
+    </body>
+</html>
