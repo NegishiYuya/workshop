@@ -26,3 +26,36 @@ var chuoLineStations = [
         "isSpecialRapidStop": true
     }
 ]
+
+var app = new Vue({
+    // idがstation-listの要素にVueインスタンスをマウント
+    el: "#station-list",
+    data: {
+        stationsList: chuoLineStations,
+        dispOnlySpecialRapidStop: false // 「特快停車駅のみ表示」
+    },
+    methods: {
+        /**
+         * 駅名を表示させるかを返却する
+         * 
+         * @param {Boolean} isSpecialRapidStop 特快停車駅かどうか
+         * @return {Boolean} 駅名を表示させるかどうか 
+         */
+        dispStation: function (isSpecialRapidStop) {
+            // 「特快停車駅のみ表示」が指定されていない場合は常に表示
+            if (!this.dispOnlySpecialRapidStop) {
+                return true;
+            }
+            return isSpecialRapidStop;
+        },
+        /**
+         * 駅名に付与するクラス名を返却する
+         * 
+         * @param {Boolean} isSpecialRapidStop 特快停車駅かどうか
+         * @return {String} 駅名に付与するクラス名 
+         */
+        getStationNameClass: function (isSpecialRapidStop) {
+            return isSpecialRapidStop ? "special-rapid" : "rapid"
+        }
+    }
+})

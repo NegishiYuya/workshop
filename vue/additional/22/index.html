@@ -21,6 +21,24 @@
                 そうでない駅はオレンジの帯で表示させること(class="rapid"を指定)
             ・ulタグとliタグを使って表示させること
         -->
-        <div id="station-list"></div>
+        <div id="station-list">
+            <input
+                type="checkbox"
+                name="dispOnlySpecialRapidStop"
+                id="dispOnlySpecialRapidStop"
+                v-model="dispOnlySpecialRapidStop"
+            />
+            <label for="dispOnlySpecialRapidStop">特快停車駅のみ表示</label>
+            <ul>
+                <li
+                    v-for="station in stationsList"
+                    :key="station.id"
+                    v-show="dispStation(station.isSpecialRapidStop)"
+                    :class="getStationNameClass(station.isSpecialRapidStop)"
+                >
+                    {{station.id}} {{station.name}}
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
