@@ -24,8 +24,16 @@
             仕様：
             ・セレクトボックスのリストの外側に、選択されている本の名前を表示させてください。
                 未選択の場合は「未選択です」と表示させてください。
-            ・選択を解除するボタンを作成してください。
+            ・選択を解除するボタンを作成してください。    
         -->
-        <div id="app"></div>
+        <div id="app">
+            <select v-model="selectMultiple" multiple>
+                <option v-for="book in booksArray" :value="book.id">
+                    {{book.name}}
+                </option></select
+            ><br />
+            <button @click="clearSelectBox">選択を解除する</button><br />
+            {{ getBookName(selectMultiple) }}
+        </div>
     </body>
 </html>
