@@ -1,0 +1,13 @@
+input[type="text"] {
+    margin: 10px;
+    height: 30px;
+}
+input[type="email"] {
+    margin: 10px;
+    height: 30px;
+    width: 500px;
+}
+.error {
+    background-color: pink;
+    border: red solid 1px;
+}

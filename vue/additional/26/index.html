@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>26</title>
+    </head>
+    <body>
+        <!--
+            課題
+            以下を満たす会員登録フォームを作成してください。
+
+            仕様：
+                ・氏名は「姓」「名」からなる。
+                    必須項目で8文字以内の入力とする。
+                ・メールアドレスは必須項目で256文字以内の入力とする。
+                ・各項目について入力に不備がある場合は、入力エリアにクラス"error"を付与すること。
+                ・また、どれか1項目でも入力に不備がある場合は「入力内容を保存」ボタンを非活性にすること。
+        -->
+        <div id="member-form">
+            <form>
+                氏名<input type="text" name="first-name" /><input
+                    type="text"
+                    name="last-name"
+                /><br />
+                メールアドレス<input type="email" name="email" /><br />
+                <input type="submit" value="入力内容を保存" />
+            </form>
+        </div>
+    </body>
+</html>
