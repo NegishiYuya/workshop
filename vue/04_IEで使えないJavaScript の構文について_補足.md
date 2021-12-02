@@ -25,5 +25,6 @@ IE で使えない ES6 から導入された JavaScript の文法は以下にま
 実装時はぜひ参照されたい。  
 [注意！IE11 で使えない最新 JavaScrit コード（ES6） – console dot log](https://blog.capilano-fw.com/?p=1273)
 
-以下の記事でhttps://babeljs.io/　というサイトで IE でも動かせるコードに変換できることが紹介されている。(詳細未調査のため、使うときは要調査)  
+以下の記事で `https://babeljs.io/`　というサイトで IE でも動かせるコードに変換できることが紹介されている。  
+(詳細未調査のため、使うときは要調査)  
 [【JavaScript】IE でアロー関数が効かなくて悲しくなった | Zakkuri ブログ](https://zakkuri.life/%E3%80%90javascript%E3%80%91ie%E3%81%A7%E3%82%A2%E3%83%AD%E3%83%BC%E9%96%A2%E6%95%B0%E3%81%8C%E5%8A%B9%E3%81%8B%E3%81%AA%E3%81%8F%E3%81%A6%E6%82%B2%E3%81%97%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F/)
