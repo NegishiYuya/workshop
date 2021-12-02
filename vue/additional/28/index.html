@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>28</title>
+    </head>
+    <body>
+        <!--
+            課題
+            以下を満たすフォームを作成してください。
+
+            仕様：
+                ・「郵便番号」がテキストで入力できる
+                    デフォルトは空にしてください。
+                ・「都道府県」がプルダウンで入力できる
+                    プルダウンのリストはpractice.jsに定義されている、
+                    「都道府県のリスト(プルダウン用)」を使ってください。
+                    デフォルトは「選択してください」にしてください。
+                ・「住所」がテキストで入力できる
+                ・入力方法を2つの内から選択できる
+                    ラベルを押下しても選択できるようにすること
+                    「新規で入力する」
+                        ⇒ 選択した場合に全項目をデフォルト値にすること
+                            画面初期表示時はこれを初期選択とすること
+                    「登録済みの住所を引用する」
+                        ⇒ 選択した場合にpractice.jsに定義されている、
+                        「登録済みの住所」を入力すること
+        -->
+        <div id="member-form">
+            <form>
+                <input type="radio" />
+                <label>新規で入力する</label>
+                <input type="radio" />
+                <label>登録済みの住所を引用する</label><br />
+                郵便番号<input type="text" /><br />
+                都道府県
+                <select></select
+                ><br />
+                住所<input type="text" /><br />
+            </form>
+        </div>
+    </body>
+</html>
