@@ -30,15 +30,40 @@
         -->
         <div id="member-form">
             <form>
-                <input type="radio" />
-                <label>新規で入力する</label>
-                <input type="radio" />
-                <label>登録済みの住所を引用する</label><br />
-                郵便番号<input type="text" /><br />
+                <input
+                    type="radio"
+                    id="input-type-1"
+                    name="input-type"
+                    value="1"
+                    v-model="inputType"
+                    @change="changeInputType"
+                />
+                <label for="input-type-1">新規で入力する</label>
+                <input
+                    type="radio"
+                    id="input-type-2"
+                    name="input-type"
+                    value="2"
+                    v-model="inputType"
+                    @change="changeInputType"
+                />
+                <label for="input-type-2">登録済みの住所を引用する</label><br />
+                郵便番号<input
+                    type="text"
+                    name="postal-code"
+                    v-model="postalCode"
+                /><br />
                 都道府県
-                <select></select
+                <select v-model="prefecture">
+                    <option
+                        v-for="postalCodeOption in postalCodeOptionList"
+                        :key="postalCodeOption.value"
+                        :value="postalCodeOption.value"
+                    >
+                        {{postalCodeOption.label}}
+                    </option></select
                 ><br />
-                住所<input type="text" /><br />
+                住所<input type="text" name="address" v-model="address" /><br />
             </form>
         </div>
     </body>

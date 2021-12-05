@@ -19,6 +19,22 @@
                 商品一覧の外側にボタン「前回の注文履歴を呼び出す」を表示させ、
                 最新の注文履歴に設定されている数量をプルダウンに反映させてください。
         -->
-        <div id="app"></div>
+        <div id="app">
+            <ul>
+                <li v-for="goods in goodsArray">
+                    {{goods.name}}
+                    <br />
+                    数量：<select v-model="goods.quantity">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </li>
+                <button @click="applyLastOrder">
+                    前回の注文履歴を呼び出す
+                </button>
+            </ul>
+        </div>
     </body>
 </html>

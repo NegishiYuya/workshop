@@ -24,3 +24,32 @@ var postalCodeOptionList = [
         "label": "千葉県"
     }
 ]
+
+var app = new Vue({
+    el: "#member-form",
+    data: {
+        inputType: 1, // 入力方法
+        postalCode: "", // 郵便番号
+        prefecture: 0, // 都道府県
+        address: "", // 住所
+        postalCodeOptionList: postalCodeOptionList // 郵便番号のリスト(プルダウン用)
+    },
+    methods: {
+        /**
+         * 入力方法を切り替える
+         */
+        changeInputType: function () {
+            if (this.inputType == 1) {
+                this.postalCode = ""
+                this.prefecture = 0
+                this.address = ""
+                return;
+            } else {
+                this.postalCode = registratedAddress.postalCode
+                this.prefecture = registratedAddress.prefecture
+                this.address = registratedAddress.address
+                return;
+            }
+        }
+    }
+})
