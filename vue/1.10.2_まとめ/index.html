@@ -27,6 +27,33 @@
             チャレンジ課題
                 上記の登録や一覧部分に＋αの機能やスタイルを考えて追加してください。
             -->
-        <div id="app"></div>
+        <div id="app">
+            <!-- エラー文言 -->
+            <span v-if="!goodsArray.length">登録された商品はありません。</span>
+            <!-- 登録 -->
+            <!-- .preventをつけてsubmitすることでsubmitのデフォルトの動きである遷移を抑制 -->
+            <form @submit.prevent="register">
+                商品名<input
+                    type="text"
+                    name="inputGoodsName"
+                    v-model="inputGoodsName"
+                /><br />
+                価格<input
+                    type="number"
+                    name="inputPrice"
+                    v-model="inputPrice"
+                /><br />
+                <input type="submit" value="登録する" />
+            </form>
+            <!-- 一覧 -->
+            <ul>
+                <li v-for="goods in goodsArray" :key="goods.id">
+                    <ul>
+                        ID: {{goods.id}} 名前:{{goods.name}}
+                        金額:{{goods.price}}
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
