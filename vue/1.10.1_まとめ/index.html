@@ -20,6 +20,15 @@
                     値の書き換えがない想定のため、DOM自体を出力する・しないで出し分けをしてください。
                 価格の表示は3桁区切りにしたうえで、末尾に文言「円」を付与してください
             -->
-        <div id="app"></div>
+        <div id="app">
+            <ul>
+                <li v-for="goods in goodsArray" :key="goods.id">
+                    <!-- 文字列を加工して返却する ⇒ filtersで実装-->
+                    {{goods.name}} {{goods.price|dispPrice}}
+                    <!-- DOM自体を出力する・しないで出し分ける ⇒ v-ifで実装 -->
+                    <span v-if="goods.isPictureBook">絵本</v-if>
+                </li>
+            </ul>
+        </div>
     </body>
 </html>
