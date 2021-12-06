@@ -83,6 +83,8 @@ var app = new Vue({
              * 商品一覧の数量に対して、注文履歴の数量を反映する
              */
             this.goodsArray.forEach(function (goods) {
+                // デフォルト値の0を設定
+                goods.quantity = 0
                 lastOrderData.forEach(function (order) {
                     /**
                      * 商品のID == 注文履歴1件のID
