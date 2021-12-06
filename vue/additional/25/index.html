@@ -22,6 +22,13 @@
                 選択が0件の時、「選択してください」
                 選択が3件以上の時、「2個まで選んでください」
         -->
-        <div id="app"></div>
+        <div id="app">
+            <select v-model="selectedGoods" multiple>
+                <option v-for="goods in goodsArray" :value="goods.id">
+                    {{goods.name}}
+                </option></select
+            ><br />
+            {{message}}
+        </div>
     </body>
 </html>
