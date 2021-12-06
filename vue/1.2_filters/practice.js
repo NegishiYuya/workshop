@@ -23,7 +23,7 @@ var app = new Vue({
         date: new Date()
     },
 
-    // filter: 汎用的なテキストフォーマットを適用する仕組み
+    // filters: 汎用的なテキストフォーマットを適用する仕組み
     filters: {
         // 日付の変換
         parseDate: function (date) {
