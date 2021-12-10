@@ -20,6 +20,29 @@
                         末尾に文言「点」を付与する
                         受験者数0人の場合は0点として扱う    
         -->
-        <div id="app"></div>
+        <div id="app">
+            <div>
+                <form @submit.prevent="postExamResult">
+                    名前：<input type="text" name="name" v-model="name" /><br />
+                    国語の点数：<input
+                        type="number"
+                        name="japanese"
+                        v-model="japanese"
+                    /><br />
+                    数学の点数：<input
+                        type="number"
+                        name="math"
+                        v-model="math"
+                    /><br />
+                    英語の点数：<input
+                        type="number"
+                        name="english"
+                        v-model="english"
+                    /><br />
+                    <input type="submit" value="点数を送信" />
+                </form>
+            </div>
+            <div>国語の平均点：{{japanseAverage|addSuffixOfPoint}}</div>
+        </div>
     </body>
 </html>
