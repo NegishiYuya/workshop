@@ -27,19 +27,41 @@
                     ・「過不足額」が0でない場合に当該エリアを赤くしてください。
             -->
         <div id="app">
-            <form>
-                日付：<input type="date" name="date" /><br />
-                出張先：<input type="text" name="destination" /><br />
-                区間：<input type="text" name="from" />～<input
+            <form @submit.prevent="register">
+                日付：<input type="date" name="date" v-model="date" /><br />
+                出張先：<input
+                    type="text"
+                    name="destination"
+                    v-model="destination"
+                /><br />
+                区間：<input type="text" name="from" v-model="from" />～<input
                     type="text"
                     name="to"
+                    v-model="to"
                 /><br />
-                金額：<input type="number" name="amount" /><br />
+                金額：<input
+                    type="number"
+                    name="amount"
+                    v-model="amount"
+                /><br />
                 <input type="submit" value="登録" />
             </form>
-            申請額:<input type="number" name="applicationAmount" /><br />
-            精算額:<input type="number" name="settlementAmount" /><br />
-            過不足額:<input type="number" name="excessOrDeficiency" />
+            申請額:<input
+                type="number"
+                name="applicationAmount"
+                v-model="applicationAmount"
+            /><br />
+            精算額:<input
+                type="number"
+                name="settlementAmount"
+                v-model="settlementAmount"
+            /><br />
+            過不足額:<input
+                type="number"
+                name="excessOrDeficiency"
+                v-model="excessOrDeficiency"
+                :class="excessOrDeficiencyClass"
+            />
             <hr />
             <table>
                 <tr>
@@ -48,11 +70,11 @@
                     <th>区間</th>
                     <th>金額</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td>～</td>
-                    <td></td>
+                <tr v-for="travelExpenses in travelExpensesArray">
+                    <td>{{travelExpenses.date}}</td>
+                    <td>{{travelExpenses.destination}}</td>
+                    <td>{{travelExpenses.from}}～{{travelExpenses.to}}</td>
+                    <td>{{travelExpenses.amount}}</td>
                 </tr>
             </table>
         </div>
