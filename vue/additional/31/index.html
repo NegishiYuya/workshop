@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+        <title>31</title>
+    </head>
+    <body>
+        <!-- 
+            課題
+                29で作ったフォームに対して、以下の制御を追加してください。
+                    (1)ボタン押下時に名前と各科目の点数が未入力の場合、
+                    名前の上部にエラーメッセージ「必須項目をすべて入力してください」を表示させる
+                    メッセージにはclass="error"を付与してください
+                    (2)国語の平均点が50点未満の場合は、国語の平均点の下部に「国語の平均点が赤点です」と表示させる
+                        受験者数が0人の時はメッセージを表示させないでください
+        -->
+        <div id="app">
+            <div>
+                <form @submit.prevent="postExamResult">
+                    名前：<input type="text" name="name" v-model="name" /><br />
+                    国語の点数：<input
+                        type="number"
+                        name="japanese"
+                        v-model="japanese"
+                    /><br />
+                    数学の点数：<input
+                        type="number"
+                        name="math"
+                        v-model="math"
+                    /><br />
+                    英語の点数：<input
+                        type="number"
+                        name="english"
+                        v-model="english"
+                    /><br />
+                    <input type="submit" value="点数を送信" />
+                </form>
+            </div>
+            <div>国語の平均点：{{japanseAverage|addSuffixOfPoint}}<br /></div>
+        </div>
+    </body>
+</html>
