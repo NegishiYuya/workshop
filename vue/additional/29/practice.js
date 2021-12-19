@@ -51,9 +51,9 @@ var app = new Vue({
             // 結果のオブジェクト
             const examResult = {
                 name: this.name,
-                japanese: this.japanese,
-                math: this.math,
-                english: this.english
+                japanese: Number(this.japanese),
+                math: Number(this.math),
+                english: Number(this.english)
             }
             // 結果のオブジェクトを配列に追加
             this.examResultArray.push(examResult);
