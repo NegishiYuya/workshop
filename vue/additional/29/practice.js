@@ -48,7 +48,16 @@ var app = new Vue({
          * 試験結果を送信する
          */
         postExamResult: function () {
-            // 結果のオブジェクト
+            /**
+             * 結果のオブジェクト
+             * 
+             * 数値として扱いたい項目をオブジェクトに
+             * そのまま設定すると、文字列として扱われるので、
+             * Number関数を使って数値型に変換する
+             * 
+             * 参考:
+             * https://uxmilk.jp/11582
+             */
             const examResult = {
                 name: this.name,
                 japanese: Number(this.japanese),
