@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="practice.js" defer></script>
+        <title>30</title>
+    </head>
+    <body>
+        <!-- 
+            課題
+                試験結果を登録できるフォームと試験結果の表示欄を作成してください
+
+                試験結果を登録できるフォームの仕様
+                    ・「名前」「科目」「点数」を入力できる
+                        「科目」はプルダウンで選択させること
+                        practice.jsに定義した「科目選択用の配列」を使ってください。
+                    ・「点数を送信する」というボタンを下部に備える
+
+                試験結果の表示欄の仕様
+                    ・「名前」「科目」「点数」を表示できる
+                        「科目」はfiltersを使ったうえで、日本語で表示させること
+        -->
+        <div id="app">
+            <div>
+                <form>
+                    名前:<input type="text" /><br />
+                    科目:
+                    <select>
+                        <option></option></select
+                    ><br />
+                    点数:<input type="number" /><br />
+                    <input type="submit" value="点数を送信" />
+                </form>
+            </div>
+            <div>
+                <ul>
+                    <li>名前: 科目: 点数:</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
