@@ -5,7 +5,8 @@ var app = new Vue({
         name: '', // 名前
         japanese: '', // 国語の点数
         math: '', // 数学の点数
-        english: '' // 英語の点数
+        english: '', // 英語の点数
+        hasError: false // エラーかどうか
     },
     filters: {
         /**
@@ -40,6 +41,17 @@ var app = new Vue({
             }, 0)
             // 国語の合計点 / 受験者数を返却する
             return sumJapaneseResult / this.numberOfExaminee
+        },
+        /**
+         * 赤点かどうかを判定する
+         * @return {Boolean} 赤点かどうか
+         */
+        isFailingGrade: function () {
+            // 受験者数が0の場合は0を返却する
+            if (this.numberOfExaminee == 0) {
+                return false;
+            }
+            return this.japanseAverage < 50;
         }
     },
     methods: {
@@ -47,6 +59,12 @@ var app = new Vue({
          * 試験結果を送信する
          */
         postExamResult: function () {
+
+            // 必須項目がすべてからの場合はエラーとする
+            if (!this.name || !this.japanese || !this.math || !this.english) {
+                this.hasError = true;
+                return;
+            }
 
             // 結果のオブジェクト
             const examResult = {
@@ -56,6 +74,8 @@ var app = new Vue({
                 english: Number(this.english)
             }
 
+            // エラーを解除させる
+            this.hasError = false;
             // 結果のオブジェクトを配列に追加
             this.examResultArray.push(examResult);
         }

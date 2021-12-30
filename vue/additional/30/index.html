@@ -23,19 +23,33 @@
         -->
         <div id="app">
             <div>
-                <form>
-                    名前:<input type="text" /><br />
+                <form @submit.prevent="postExamResult">
+                    名前:<input type="text" name="name" v-model="name" /><br />
                     科目:
-                    <select>
-                        <option></option></select
+                    <select v-model="subject">
+                        <option
+                            v-for="subjectOption in subjectOptionArray"
+                            :key="subjectOption.id"
+                            :value="subjectOption.value"
+                        >
+                            {{subjectOption.label}}
+                        </option></select
                     ><br />
-                    点数:<input type="number" /><br />
+                    点数:<input
+                        type="number"
+                        name="point"
+                        v-model="point"
+                    /><br />
                     <input type="submit" value="点数を送信" />
                 </form>
             </div>
             <div>
                 <ul>
-                    <li>名前: 科目: 点数:</li>
+                    <li v-for="examResult in examResultArray">
+                        名前:{{examResult.name}}
+                        科目:{{examResult.subject|convertTextForSubject}}
+                        点数:{{examResult.point}}
+                    </li>
                 </ul>
             </div>
         </div>

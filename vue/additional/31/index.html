@@ -13,12 +13,14 @@
                 29で作ったフォームに対して、以下の制御を追加してください。
                     (1)ボタン押下時に名前と各科目の点数が未入力の場合、
                     名前の上部にエラーメッセージ「必須項目をすべて入力してください」を表示させる
-                    メッセージにはclass="error"を付与してください
                     (2)国語の平均点が50点未満の場合は、国語の平均点の下部に「国語の平均点が赤点です」と表示させる
                         受験者数が0人の時はメッセージを表示させないでください
         -->
         <div id="app">
             <div>
+                <span class="error" v-show="hasError"
+                    >必須項目をすべて入力してください</span
+                >
                 <form @submit.prevent="postExamResult">
                     名前：<input type="text" name="name" v-model="name" /><br />
                     国語の点数：<input
@@ -39,7 +41,10 @@
                     <input type="submit" value="点数を送信" />
                 </form>
             </div>
-            <div>国語の平均点：{{japanseAverage|addSuffixOfPoint}}<br /></div>
+            <div>
+                国語の平均点：{{japanseAverage|addSuffixOfPoint}}<br />
+                <span v-show="isFailingGrade">国語の平均点が赤点です</span>
+            </div>
         </div>
     </body>
 </html>
