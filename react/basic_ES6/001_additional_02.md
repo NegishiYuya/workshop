@@ -27,7 +27,7 @@ const flowerWord = '健康';
 ```javascript
 {
     name : "ガジュマル",
-    kind : "クワ科イチジク属"
+    kind : "クワ科イチジク属",
     flowerWord : "健康"
 }
 ```
