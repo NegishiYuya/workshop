@@ -9,6 +9,15 @@ const getTriangle = (bottom, height) => (bottom * height) / 2;
 console.log(getTriangle(1, 3));
 ```
 
+###　解答
+
+```javascript
+const getTriangle = function (bottom, height) {
+    return (bottom * height) / 2;
+};
+console.log(getTriangle(1, 3));
+```
+
 ## 問題 2
 
 以下のように 3 つの変数を使って、  
@@ -41,6 +50,20 @@ const flowerWord = '健康';
 console.log(convertJson('ガジュマル', 'クワ科イチジク属', '健康'));
 ```
 
+### 解答
+
+```javascript
+const convertJson = (name, kind, flowerWord) => {
+    return {
+        name: name,
+        kind: kind,
+        flowerWord: flowerWord
+    };
+};
+
+console.log(convertJson('ガジュマル', 'イチジク', '健康'));
+```
+
 ## 問題 3
 
 以下のソースコード内の関数`printPlantInfo`を、仕様に沿って実装してください。
@@ -68,4 +91,27 @@ printPlantInfo(parlorPalm);
 ```
 植物の名前は「ガジュマル」、種は「クワ科イチジク属」、花言葉は「健康」です。
 植物の名前は「テーブルヤシ」、種は「ヤシ科カマエドレア属」、花言葉は「あなたを見守る」です。
+```
+
+### 解答
+
+```javascript
+const ficus = {
+    name: 'ガジュマル',
+    kind: 'クワ科イチジク属',
+    flowerWord: '健康'
+};
+const parlorPalm = {
+    name: 'テーブルヤシ',
+    kind: 'ヤシ科カマエドレア属',
+    flowerWord: 'あなたを見守る'
+};
+
+const printPlantInfo = (plant) =>
+    console.log(
+        `植物の名前は「${plant.name}」、種は「${plant.kind}」、花言葉は「${plant.flowerWord}」です。`
+    );
+
+printPlantInfo(ficus);
+printPlantInfo(parlorPalm);
 ```
