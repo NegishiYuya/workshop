@@ -80,3 +80,11 @@ const array = [
 
 * コンソールに「アッシュ」「クリプト」と出力すること。
 *  ソースコード内のコメントの「ここを実装」の箇所は1行で実装すること。
+
+```javascript
+const nameArray = ["アッシュ", "オクタン", "クリプト"];
+// ここを実装
+console.log(name1);
+console.log(name2);
+```
+
