@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script>
+        <script src="script_compressed.js" defer></script>
+        <title>ES6 総復習</title>
+    </head>
+    <body>
+        <h1>有休管理簿</h1>
+        <div id="input-container">
+            <div class="input-item">
+                <div class="input-item-name">日付</div>
+                <input type="date" id="input-date" />
+            </div>
+            <div class="input-item">
+                <div class="input-item-name">期間</div>
+                <select name="period" id="input-period"></select>
+            </div>
+            <button id="register-button">登録する</button>
+        </div>
+        <div id="output-container">
+            <h2>有休取得履歴</h2>
+            <label for="output-only-oneday-holiday">
+                <input type="checkbox" id="output-only-oneday-holiday"/>
+                全休のみ絞り込む
+            </labe>
+            <ul></ul>
+        </div>
+    </body>
+</html>

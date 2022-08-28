@@ -1,0 +1,30 @@
+.input-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+.input-item-name {
+    width: 10%;
+}
+#output-container ul {
+    list-style-type: none;
+}
+#output-container li {
+    margin-bottom: 5px;
+}
+.oneday-holiday .icon {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+}
+.icon {
+    background-color: lightblue;
+    color: white;
+    border-radius: 5px;
+}
+.icon {
+    color: white;
+    border-radius: 5px;
+}
+.display-none {
+    display: none;
+}
