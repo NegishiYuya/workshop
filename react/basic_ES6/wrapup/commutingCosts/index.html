@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles_compressed.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script>
+        <script src="script_compressed.js" defer></script>
+        <title>ES6 総復習</title>
+    </head>
+    <body>
+        <h1>出張旅費</h1>
+        <div id="container">
+            <div id="input-container">
+                <div class="input-item">
+                    <div class="input-item-name">日付</div>
+                    <input type="date" id="input-date" />
+                </div>
+                <div class="input-item">
+                    <div class="input-item-name">区間</div>
+                    <input
+                        type="text"
+                        id="input-from"
+                        placeholder="From"
+                    />～<input type="text" id="input-to" placeholder="To" />
+                </div>
+                <div class="input-item">
+                    <div class="input-item-name">金額</div>
+                    <input type="number" id="input-costs" />
+                </div>
+                <div class="input-item">
+                    <div class="input-item-name">手段</div>
+                    <select name="period" id="input-facilities"></select>
+                </div>
+                <button id="register-button">登録する</button>
+            </div>
+            <div id="output-container">
+                <h2>出張旅費履歴</h2>
+                <div class="input-item">
+                    <div class="input-item-name">支払方法</div>
+                    <select name="period" id="input-payments"></select>
+                </div>
+                <div class="input-item">
+                    <div class="input-item-name">回数券のみ表示</div>
+                    <div class="toggle-button">
+                        <input
+                            id="use-coupon-only"
+                            class="toggle-input"
+                            type="checkbox"
+                        />
+                        <label for="use-coupon-only" class="toggle-label" />
+                    </div>
+                </div>
+                <ul></ul>
+            </div>
+        </div>
+    </body>
+</html>
