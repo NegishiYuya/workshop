@@ -1,0 +1,82 @@
+button {
+    width: 200px;
+    height: 40px;
+    font-size: larger;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+li {
+    margin-right: 10px;
+}
+
+#open-button {
+    border-radius: 20px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    font-weight: bold;
+    color: #000000;
+}
+
+#modal-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#modal-content {
+    background-color: #ffffff;
+    width: 40%;
+    padding: 30px;
+    margin: 30px auto 30px auto;
+}
+
+#modal-content-title {
+    margin-bottom: 20px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#submit-button-area {
+    text-align: center;
+}
+
+#submit-button {
+    background-color: #00004d;
+    color: #ffffff;
+}
+
+.display-none {
+    display: none;
+}
+
+.input-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-item-title {
+    width: 200px;
+}
+
+.input-item-area {
+    margin: 0px;
+    padding: 0px;
+}
+
+.required-item-mark {
+    background-color: #ff0000;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-right: 10px;
+}
