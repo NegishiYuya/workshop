@@ -174,13 +174,6 @@ for (let index = 0; index < array.length; index++) {
 
 配列の持つ find メソッドと filter メソッドの違いを説明してください。
 
-#### 解答
-
-find メソッドは配列から条件に一致した最初の値を返す。  
-filter メソッドは配列から条件に一致した値をすべて返す。
-
-参考：https://qiita.com/kuro_96/items/3620dfbb9482bd16945d
-
 ### 問題 12
 
 以下の配列 array を加工して、新しい配列を作ってください。
