@@ -11,11 +11,16 @@ fun main(args: Array<String>) {
    */
   val point = 51
   val BORDER = 50
+  val result = if (point >= BORDER) "合格" else "不合格"
+  println(result)
 
   /**
    * 以下を条件分岐を使って実装してください
    * pointがborder未満である場合⇒"赤点"と標準出力
    * 上記を満たさない場合⇒何もしない
    */
+  if (point < BORDER) {
+    println("赤点")
+  }
 
 }
