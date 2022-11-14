@@ -12,4 +12,16 @@ package workshop
  *
  * 関数：名前と年齢を標準出力する.
  */
-class User()
+class User(
+  val name: String,
+  val age: Int,
+) {
+  constructor(name: String) : this(
+    name = name,
+    age = 10
+  )
+
+  fun printUser() {
+    println("名前:${name}, 年齢:${age}")
+  }
+}
