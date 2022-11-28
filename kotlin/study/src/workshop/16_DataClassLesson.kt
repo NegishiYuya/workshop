@@ -3,7 +3,7 @@ package workshop
 fun main(args: Array<String>) {
 
   /**
-   * resources/16_DataClassLesson.xlsxに記載のクラスし、
+   * resources/DataClassLesson.xlsxに記載のクラスし、
    * 同ファイルに記載している変数「1人目」と「2人目」を本メソッドに定義してください
    * また、作成した変数を標準出力して結果を確認してください
    */
@@ -23,7 +23,7 @@ fun main(args: Array<String>) {
   println(member02)
 
   /**
-   * resources/16_DataClassLesson.xlsxに記載の変数「3人目」を
+   * resources/DataClassLesson.xlsxに記載の変数「3人目」を
    * 「1人目」をコピーしたうえで本メソッドに定義してください
    * また、作成した「3人目」と「1人目」を"=="で比較した結果を確認してください
    */
@@ -33,7 +33,7 @@ fun main(args: Array<String>) {
   println(member01 == member03)
 
   /**
-   * resources/16_DataClassLesson.xlsxに記載の変数「4人目」を
+   * resources/DataClassLesson.xlsxに記載の変数「4人目」を
    * 「1人目」をコピーしたうえで本メソッドに定義してください
    * また、作成した変数を標準出力して結果を確認してください
    */
