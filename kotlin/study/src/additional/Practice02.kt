@@ -8,7 +8,11 @@ fun main(args: Array<String>) {
    * "小先生"
    * "中先生"
    */
-
+  val immutableList = listOf(
+    "小先生",
+    "中先生"
+  )
+  println(immutableList)
 
   /**
    * 問題2. 変更不可のMapを作成してください。
@@ -16,7 +20,11 @@ fun main(args: Array<String>) {
    * Key: 1 / value: "小先生"
    * Key: 2 / value: "中先生"
    */
-
+  val immutableMap = mapOf(
+    1 to "小先生",
+    2 to "中先生"
+  )
+  println(immutableMap)
 
   /**
    * 問題3. 変更不可のSetを作成してください。
@@ -25,7 +33,12 @@ fun main(args: Array<String>) {
    * "中先生"
    * "小先生"
    */
-
+  val immutableSet = setOf(
+    "小先生",
+    "中先生",
+    "小先生"
+  )
+  println(immutableSet)
 
   /**
    * 問題4. 変更可のListを作成してください。
@@ -36,7 +49,12 @@ fun main(args: Array<String>) {
    * 生成後に以下1件の要素を設定すること。
    * "大先生"
    */
-
+  val mutableList = mutableListOf(
+    "小先生",
+    "中先生"
+  )
+  mutableList.add("大先生")
+  println(mutableList)
 
   /**
    * 問題5. 変更可のMapを作成してください。
@@ -47,7 +65,12 @@ fun main(args: Array<String>) {
    * 生成後に以下1件の要素を設定すること。
    * Key: 3 / value: "大先生"
    */
-
+  val mutableMap = mutableMapOf(
+    1 to "小先生",
+    2 to "中先生"
+  )
+  mutableMap.put(3, "大先生")
+  println(mutableMap)
 
   /**
    * 問題6. 変更可のSetを作成してください。
@@ -58,7 +81,12 @@ fun main(args: Array<String>) {
    * 生成後に以下1件の要素を設定すること。
    * "小先生"
    */
-
+  val mutableSet = mutableSetOf(
+    "小先生",
+    "中先生"
+  )
+  mutableSet.add("小先生")
+  println(mutableSet)
 
   /**
    * 問題7.
@@ -71,7 +99,7 @@ fun main(args: Array<String>) {
     "中先生",
     "大先生"
   )
-
+  listForQ7.forEachIndexed { index, value -> println("${index}番目: ${value}") }
 
   /**
    * 問題8.
@@ -86,7 +114,8 @@ fun main(args: Array<String>) {
     "大先生",
     "特大先生"
   )
-
+  println(listForQ8.all { it.length > 3 })
+  println(listForQ8.all { it.length > 2 })
 
   /**
    * 問題7.
@@ -101,7 +130,8 @@ fun main(args: Array<String>) {
     "大先生",
     "特大先生"
   )
-
+  println(listForQ9.any { it.length > 3 })
+  println(listForQ9.any { it.length > 4 })
 
   /**
    * 問題10.
@@ -116,6 +146,7 @@ fun main(args: Array<String>) {
     "大先生",
     "特大先生"
   )
-
+  println(listForQ10.count { it.length > 2 })
+  println(listForQ10.count { it.length > 3 })
 
 }
