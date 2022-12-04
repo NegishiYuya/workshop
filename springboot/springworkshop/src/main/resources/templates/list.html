@@ -5,11 +5,11 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 </head>
 <body>
-    <ul>
-        <li>1, ニャオハ</li>
-        <li>2, ニャローテ</li>
-        <li>3, マスカーニャ</li>
-        <li>4, ホゲータ</li>
+    <ul th:each="user : ${userList}">
+        <li>
+            ID:<span th:text="${user.id}"></span>
+            名前:<span th:text="${user.name}"></span>
+        </li>
     </ul>
 </body>
 </html>
