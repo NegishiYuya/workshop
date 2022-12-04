@@ -18,7 +18,7 @@ class UserController {
 
 	@GetMapping
 	fun index(model: Model): String {
-		model["userList"] = userService.getList().map { UserForm(it.id, it.name)}
+		model["userList"] = userService.getList().map { UserForm(it.id, it.name) }
 		return "list"
 	}
 }
