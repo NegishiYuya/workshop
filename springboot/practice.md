@@ -71,4 +71,16 @@ Listの取得処理を新規作成したServiceクラスに実装してくださ
 ## 備考
 
 Serviceでのデータの取り扱いはUser.ktを使い、Controllerでのデータの取り扱いはUserForm.ktを使うこと   
-(※ControllerでServiceから受けとったList<User>をList<UserForm>に変換すること) 
+(※ControllerでServiceから受けとったList<User>をList<UserForm>に変換すること)
+
+---
+
+# 課題4
+
+Listの取得処理を新規作成したDaoクラスに実装してください 
+
+## 成果物
+
+* kotlin/com/example/springworkshop/dao/UserDao.kt
+* kotlin/com/example/springworkshop/dao/UserDaoImpl.kt
+
