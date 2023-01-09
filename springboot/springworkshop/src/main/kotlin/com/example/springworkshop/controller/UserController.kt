@@ -23,7 +23,8 @@ class UserController {
 	}
 
 	@GetMapping("/detail")
-	fun detail(model: Model): String {
+	fun detail(@RequestParam(value = "userId") userId: String, model: Model): String {
+		println(userId)
 		model["user"] = UserForm(id = 4, name = "ホゲータ")
 		return "detail"
 	}
