@@ -84,3 +84,17 @@ Listの取得処理を新規作成したDaoクラスに実装してください
 * kotlin/com/example/springworkshop/dao/UserDao.kt
 * kotlin/com/example/springworkshop/dao/UserDaoImpl.kt
 
+---
+
+# 課題5
+
+以下の仕様を満たす画面を製造してください。
+
+## 仕様
+
+* /user/detail?userId={userId}にアクセスした場合に、ユーザーの情報が1件のみ表示される
+   * `detail.html`を表示させること
+* リクエストパラメータuserIdには数値が入る想定であり、数値でない値が入った場合の考慮は不要。
+* DBを模したリストは課題2の備考に記載されているものを使うこと。
+* リクエストパラメータuserIdに存在しないIDが設定されている場合は以下の値を設定して画面表示すること
+  * ID:0, 名前:未設定
