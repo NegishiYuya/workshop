@@ -16,6 +16,7 @@ class UserController {
 
 	@Autowired
 	lateinit var userService: UserService
+
 	@GetMapping
 	fun index(model: Model): String {
 		model["userList"] = userService.getList().map { UserForm(it.id, it.name) }
@@ -24,8 +25,12 @@ class UserController {
 
 	@GetMapping("/detail")
 	fun detail(@RequestParam(value = "userId") userId: String, model: Model): String {
-		println(userId)
-		model["user"] = UserForm(id = 4, name = "ホゲータ")
+		model["user"] = userService.getUser(userId.toInt()).let {
+			UserForm(
+				id = it.id,
+				name = it.name
+			)
+		}
 		return "detail"
 	}
 }
