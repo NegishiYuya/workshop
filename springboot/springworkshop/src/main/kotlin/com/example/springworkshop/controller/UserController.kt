@@ -25,12 +25,15 @@ class UserController {
 
 	@GetMapping("/detail")
 	fun detail(@RequestParam(value = "userId") userId: String, model: Model): String {
-		model["user"] = userService.getUser(userId.toInt()).let {
+		model["user"] = userService.getUser(userId.toInt())?.let {
 			UserForm(
 				id = it.id,
 				name = it.name
 			)
-		}
+		} ?: UserForm(
+			id = 0,
+			name = "未設定"
+		)
 		return "detail"
 	}
 }
