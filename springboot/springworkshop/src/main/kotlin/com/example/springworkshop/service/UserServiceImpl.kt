@@ -14,4 +14,8 @@ class UserServiceImpl : UserService {
 	override fun getList(): List<User> {
 		return userDao.selectList()
 	}
+
+	override fun getUser(userId: Int): User? {
+		return userDao.select(userId)
+	}
 }
