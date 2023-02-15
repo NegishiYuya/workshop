@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
 import org.springframework.ui.set
 import org.springframework.validation.BindingResult
+import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.ModelAttribute
 import org.springframework.web.bind.annotation.PostMapping
@@ -46,7 +47,10 @@ class UserController {
 	}
 
 	@PostMapping("/confirm")
-	fun confirm(@ModelAttribute("userForm") userForm: UserForm): String {
+	fun confirm(@Validated @ModelAttribute("userForm") userForm: UserForm, bindingResult: BindingResult): String {
+		if (bindingResult.hasErrors()) {
+			return "input"
+		}
 		return "confirm"
 	}
 }
