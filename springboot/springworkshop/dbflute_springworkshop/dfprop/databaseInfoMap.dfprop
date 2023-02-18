@@ -15,11 +15,11 @@
 # *The line that starts with '#' means comment-out.
 #
 map:{
-    ; driver   = @driver@
-    ; url      = @url@
-    ; schema   = @schema@
-    ; user     = @user@
-    ; password = @password@
+    ; driver   = com.mysql.jdbc.Driver
+    ; url      = jdbc:mysql://127.0.0.1:3306/test_database?useSSL=false
+    ; schema   = test_database
+    ; user     = docker
+    ; password = docker
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # o propertiesMap: (NotRequired - Default map:{})
