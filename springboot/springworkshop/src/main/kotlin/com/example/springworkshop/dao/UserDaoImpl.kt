@@ -9,19 +9,23 @@ class UserDaoImpl : UserDao {
 	private val userList: List<User> = listOf(
 		User(
 			id = 1,
-			name = "ニャオハ"
+			name = "ニャオハ",
+			categoryId = 1
 		),
 		User(
 			id = 2,
-			name = "ニャローテ"
+			name = "ニャローテ",
+			categoryId = 1
 		),
 		User(
 			id = 3,
-			name = "マスカーニャ"
+			name = "マスカーニャ",
+			categoryId = 1
 		),
 		User(
 			id = 4,
-			name = "ホゲータ"
+			name = "ホゲータ",
+			categoryId = 2
 		),
 	)
 

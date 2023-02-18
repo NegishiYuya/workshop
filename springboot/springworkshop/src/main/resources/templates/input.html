@@ -9,9 +9,18 @@
     <ul th:if="${#fields.hasErrors('*')}">
         <li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
     </ul>
-    <input type="text" name="id" th:field="*{id}">
-    <input type="text" name="name" th:field="*{name}">
-    <button type="submit" class="btn btn-default">confirm</button>
+    ID:<input type="text" name="id" th:field="*{id}">
+    名前:<input type="text" name="name" th:field="*{name}">
+    分類:<select name="categoryId" th:field="*{categoryId}">
+    <option
+            th:each="categoryMaster : ${categoryMasterList}"
+            th:value="${categoryMaster.id}"
+            th:text="${categoryMaster.label}"
+            th:selected="${categoryMaster.id == categoryId}"
+    >
+    </option>
+</select>
+    <button type="submit" class="btn btn-default">登録</button>
 </form>
 </body>
 </html>
