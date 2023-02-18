@@ -46,7 +46,7 @@ map:{
     #
     #       java, csharp, scala
     #
-    ; targetLanguage = @targetLanguage@
+    ; targetLanguage = java
     # - - - - - - - - - -/
 
     # /- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
