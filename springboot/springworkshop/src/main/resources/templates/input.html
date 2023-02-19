@@ -5,7 +5,7 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
 </head>
 <body>
-<form th:action="@{/user/confirm}" method="post" th:object="${userForm}">
+<form th:action="@{/user/register}" method="post" th:object="${userForm}">
     <ul th:if="${#fields.hasErrors('*')}">
         <li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
     </ul>
