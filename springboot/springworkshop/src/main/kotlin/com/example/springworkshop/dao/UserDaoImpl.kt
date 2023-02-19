@@ -27,10 +27,14 @@ class UserDaoImpl : UserDao {
 	)
 
 	override fun selectList(): List<User> {
-		return userBhv.selectList { cb -> cb.query() }.map { User(id = it.id, name = it.name, categoryId = it.categoryId) }
+		return userBhv.selectList { cb ->
+			cb.query()
+		}.map { User(id = it.id, name = it.name, categoryId = it.categoryId) }
 	}
 
 	override fun select(userId: Int): User? {
-		return userList.find { it.id == userId }
+		return userBhv.selectByPK(userId).get().let {
+			User(id = it.id, name = it.name, categoryId = it.categoryId)
+		}
 	}
 }
