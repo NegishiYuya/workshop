@@ -18,8 +18,4 @@ class UserServiceImpl : UserService {
 	override fun getUser(userId: Int): UserDto? {
 		return userDao.select(userId)
 	}
-
-	override fun registerUser(userDto: UserDto) {
-		userDao.insert(userDto)
-	}
 }

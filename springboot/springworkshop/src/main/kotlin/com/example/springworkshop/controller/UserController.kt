@@ -1,6 +1,5 @@
 package com.example.springworkshop.controller
 
-import com.example.springworkshop.dto.UserDto
 import com.example.springworkshop.form.UserForm
 import com.example.springworkshop.service.CategoryMasterService
 import com.example.springworkshop.service.UserService
@@ -70,7 +69,6 @@ class UserController {
 		if (bindingResult.hasErrors()) {
 			return input(model, userForm)
 		}
-		userService.registerUser(userForm.let { UserDto(id = it.id, name = it.name, categoryId = it.categoryId) })
 		return index(model)
 	}
 }
