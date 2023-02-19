@@ -1,15 +1,15 @@
 package com.example.springworkshop.dao
 
-import com.example.springworkshop.entity.CategoryMaster
+import com.example.springworkshop.dto.CategoryMasterDto
 import org.springframework.stereotype.Repository
 
 @Repository
 class CategoryMasterDaoImpl : CategoryMasterDao {
-	override fun selectList(): List<CategoryMaster> {
+	override fun selectList(): List<CategoryMasterDto> {
 		return listOf(
-			CategoryMaster(1, "くさ"),
-			CategoryMaster(2, "ほのお"),
-			CategoryMaster(3, "みず")
+			CategoryMasterDto(1, "くさ"),
+			CategoryMasterDto(2, "ほのお"),
+			CategoryMasterDto(3, "みず")
 		)
 	}
 }

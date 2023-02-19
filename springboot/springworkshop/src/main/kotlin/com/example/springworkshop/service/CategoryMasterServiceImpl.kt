@@ -1,7 +1,7 @@
 package com.example.springworkshop.service
 
 import com.example.springworkshop.dao.CategoryMasterDao
-import com.example.springworkshop.entity.CategoryMaster
+import com.example.springworkshop.dto.CategoryMasterDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
@@ -11,7 +11,7 @@ class CategoryMasterServiceImpl : CategoryMasterService {
 	@Autowired
 	lateinit var categoryMasterDao: CategoryMasterDao;
 
-	override fun getList(): List<CategoryMaster> {
+	override fun getList(): List<CategoryMasterDto> {
 		return categoryMasterDao.selectList()
 	}
 }
