@@ -15,7 +15,7 @@
 # *The line that starts with '#' means comment-out.
 #
 map:{
-    ; driver   = com.mysql.jdbc.Driver
+    ; driver   = com.mysql.cj.jdbc.Driver
     ; url      = jdbc:mysql://127.0.0.1:3306/test_database?useSSL=false
     ; schema   = test_database
     ; user     = docker
