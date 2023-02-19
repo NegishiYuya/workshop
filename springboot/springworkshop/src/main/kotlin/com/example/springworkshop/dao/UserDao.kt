@@ -1,8 +1,8 @@
 package com.example.springworkshop.dao
 
-import com.example.springworkshop.entity.User
+import com.example.springworkshop.dto.UserDto
 
 interface UserDao {
-	fun selectList(): List<User>
-	fun select(userId: Int): User?
+	fun selectList(): List<UserDto>
+	fun select(userId: Int): UserDto?
 }

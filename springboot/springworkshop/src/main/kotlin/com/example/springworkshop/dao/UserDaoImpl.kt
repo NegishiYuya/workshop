@@ -1,39 +1,39 @@
 package com.example.springworkshop.dao
 
-import com.example.springworkshop.entity.User
+import com.example.springworkshop.dto.UserDto
 import org.springframework.stereotype.Repository
 
 @Repository
 class UserDaoImpl : UserDao {
 
-	private val userList: List<User> = listOf(
-		User(
+	private val userDtoLists: List<UserDto> = listOf(
+		UserDto(
 			id = 1,
 			name = "ニャオハ",
 			categoryId = 1
 		),
-		User(
+		UserDto(
 			id = 2,
 			name = "ニャローテ",
 			categoryId = 1
 		),
-		User(
+		UserDto(
 			id = 3,
 			name = "マスカーニャ",
 			categoryId = 1
 		),
-		User(
+		UserDto(
 			id = 4,
 			name = "ホゲータ",
 			categoryId = 2
 		),
 	)
 
-	override fun selectList(): List<User> {
-		return userList
+	override fun selectList(): List<UserDto> {
+		return userDtoLists
 	}
 
-	override fun select(userId: Int): User? {
-		return userList.find { it.id == userId }
+	override fun select(userId: Int): UserDto? {
+		return userDtoLists.find { it.id == userId }
 	}
 }

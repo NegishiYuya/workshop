@@ -1,8 +1,8 @@
 package com.example.springworkshop.service
 
-import com.example.springworkshop.entity.User
+import com.example.springworkshop.dto.UserDto
 
 interface UserService {
-	fun getList(): List<User>
-	fun getUser(userId: Int): User?
+	fun getList(): List<UserDto>
+	fun getUser(userId: Int): UserDto?
 }
