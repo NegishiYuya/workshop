@@ -60,8 +60,8 @@ class UserController {
 		return "input"
 	}
 
-	@PostMapping("/confirm")
-	fun confirm(
+	@PostMapping("/register")
+	fun register(
 		model: Model,
 		@Validated @ModelAttribute("userForm") userForm: UserForm,
 		bindingResult: BindingResult,
@@ -69,14 +69,6 @@ class UserController {
 		if (bindingResult.hasErrors()) {
 			return input(model, userForm)
 		}
-		model.addAttribute(
-			"user", UserViewDto(
-				id = userForm.id,
-				name = userForm.name,
-				categoryName = categoryMasterService.getList()
-					.find { categoryMaster -> categoryMaster.id == userForm.categoryId }?.label
-			)
-		)
-		return "confirm"
+		return index(model)
 	}
 }
