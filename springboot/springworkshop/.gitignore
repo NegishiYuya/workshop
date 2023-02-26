@@ -35,3 +35,5 @@ out/
 
 ### VS Code ###
 .vscode/
+/dbflute_springworkshop/log/dbflute.log
+/dbflute_springworkshop/schema/schemadiff/2023/diffpiece-springworkshop-20230218-180139-580.diffmap
