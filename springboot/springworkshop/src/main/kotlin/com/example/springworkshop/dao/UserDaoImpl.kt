@@ -1,8 +1,9 @@
 package com.example.springworkshop.dao
 
-import com.example.springworkshop.dto.UserDto
 import com.springworkshop.dbflute.exbhv.UserBhv
 import org.springframework.beans.factory.annotation.Autowired
+import com.example.springworkshop.dto.UserDto
+import com.springworkshop.dbflute.exentity.User
 import org.springframework.stereotype.Repository
 
 @Repository
@@ -20,5 +21,13 @@ class UserDaoImpl : UserDao {
 
 		return userBhv.selectEntity { cb -> cb.query().setId_Equal(userId) }.orElseThrow()
 			.let { UserDto(id = it.id, name = it.name, categoryId = it.categoryId) }
+	}
+
+	override fun insert(userDto: UserDto) {
+		userBhv.insert(User().also {
+			it.id = userDto.id
+			it.name = userDto.name
+			it.categoryId = userDto.categoryId
+		})
 	}
 }
