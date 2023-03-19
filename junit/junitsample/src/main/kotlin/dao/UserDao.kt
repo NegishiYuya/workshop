@@ -7,4 +7,9 @@ class UserDao {
 		// 未実装
 		return listOf()
 	}
+
+	fun countUserByUserName(name: String): Int {
+		// 未実装
+		return 0;
+	}
 }

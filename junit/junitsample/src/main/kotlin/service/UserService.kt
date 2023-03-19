@@ -9,4 +9,8 @@ class UserService {
 	fun getUserNameList(): List<String> {
 		return userDao.getUserList().map { it.name }
 	}
+
+	fun existsUserByUserName(name: String): Boolean {
+		return userDao.countUserByUserName(name) >= 1
+	}
 }

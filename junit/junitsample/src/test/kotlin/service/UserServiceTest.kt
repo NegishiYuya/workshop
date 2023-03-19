@@ -40,4 +40,13 @@ class UserServiceTest {
 		// Assert: 検証
 		assertThat(actual).isEqualTo(expected)
 	}
+
+	@Test
+	fun existsUserByUserName_存在する場合はtrueを返す() {
+
+	}
+	@Test
+	fun existsUserByUserName_存在しない場合はfalseを返す() {
+
+	}
 }
