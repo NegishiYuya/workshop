@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div>
+    <form method="POST" th:action="@{postSample}" th:object="${validationSampleForm}">
+        <ul th:if="${#fields.hasErrors()}">
+            <li class="error-message" th:each="message: ${messageList}" th:text="${message}">
+        </ul>
+        <table>
+            <tr th:classappend="${#fields.hasErrors('id')} ? 'has-error'">
+                <th>ID</th>
+                <td>
+                    <input id="id" name="id" th:field="*{id}" type="text">
+                    <ul th:if="${#fields.hasErrors('id')}">
+                        <li class="error-message" th:each="message : ${#fields.errors('id')}" th:text="${message}"></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr th:classappend="${#fields.hasErrors('name')} ? 'has-error'">
+                <th>
+                    名前
+                </th>
+                <td>
+                    <input id="name" name="name" th:field="*{name}" type="text">
+                    <ul th:if="${#fields.hasErrors('name')}">
+                        <li class="error-message" th:each="message : ${#fields.errors('name')}"
+                            th:text="${message}"></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr th:classappend="${#fields.hasErrors('name')} ? 'has-error'">
+                <th>
+                    メールアドレス
+                </th>
+                <td>
+                    <input id="email" name="email" th:field="*{email}" type="text">
+                    <ul th:if="${#fields.hasErrors('email')}">
+                        <li class="error-message" th:each="message : ${#fields.errors('email')}"
+                            th:text="${message}"></li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="送信">
+    </form>
+
+</div>
+</body>
+</html>
